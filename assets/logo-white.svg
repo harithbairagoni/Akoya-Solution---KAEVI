@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 64" fill="none" class="w-auto h-9">
+  <!-- Modern Geometric K Glyph -->
+  <g id="kaevi-symbol-white">
+    <path d="M6 8 L18 8 L18 56 L6 56 Z" fill="url(#kaevi-white-cyan)" />
+    <path d="M23 30 L41 10 L56 10 L34 33 Z" fill="url(#kaevi-white-blue)" />
+    <path d="M30 31 L44 56 L59 56 L41 27 Z" fill="url(#kaevi-white-cyan)" />
+  </g>
+  
+  <!-- Brand Wordmark for Dark Backgrounds -->
+  <text x="74" y="38" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="28" font-weight="800" letter-spacing="0.06em" fill="#FFFFFF">KAEVI</text>
+  <text x="75" y="52" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="7" font-weight="700" letter-spacing="0.25em" fill="#38BDF8">GLOBAL WORKFORCE PARTNERS</text>
+  
+  <defs>
+    <linearGradient id="kaevi-white-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+    <linearGradient id="kaevi-white-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60A5FA" />
+      <stop offset="100%" stop-color="#2563EB" />
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,695 @@
+/* ==========================================================================
+   KAEVI GLOBAL WORKFORCE PARTNERS
+   Corporate Design System — Round 3 Final Polish & Mobile Precision
+   ========================================================================== */
+
+:root {
+  /* Surfaces & Canvas */
+  --bg-canvas: #FBFBFA;             /* Warm Editorial Alabaster */
+  --bg-surface: #FFFFFF;            /* Pure Crisp White */
+  --bg-subtle: #F5F5F2;             /* Warm Stone */
+  --bg-subtle-alt: #EFEFEA;         /* Accent Stone */
+  --bg-navy: #0B192C;               /* Signature Executive Navy */
+  --bg-navy-deep: #06111F;          /* Midnight Base */
+  
+  /* Typography Colors */
+  --text-primary: #0B192C;          /* Deep Navy Ink */
+  --text-body: #334155;             /* Slate Charcoal */
+  --text-secondary: #475569;        /* Medium Slate */
+  --text-muted: #64748B;            /* Muted Gray */
+  --text-inverse: #FFFFFF;          /* Pure White on Dark */
+  --text-inverse-muted: #94A3B8;    /* Muted Slate on Dark */
+
+  /* Brand Accents */
+  --brand-blue: #0284C7;            /* Corporate Sky / Azure */
+  --brand-blue-dark: #0369A1;       /* Deep Azure */
+  --brand-navy-accent: #1E3A8A;
+  --brand-teal: #0D9488;            /* Restrained Teal / Pine */
+
+  /* Architectural Hairlines */
+  --border-hairline: #E2E8F0;       /* 1px Structural Divider */
+  --border-subtle: #EBEBE6;         /* Soft Warm Divider */
+  --border-strong: #CBD5E1;
+
+  /* Typography Families */
+  --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Radii */
+  --radius-xs: 3px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  /* Transitions */
+  --transition-fast: 160ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 260ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Setup */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  background-color: var(--bg-canvas);
+  color: var(--text-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  background-color: var(--bg-canvas);
+  color: var(--text-body);
+  min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Headings with Editorial Sophistication */
+h1, h2, h3, .font-serif {
+  font-family: var(--font-serif);
+  color: var(--text-primary);
+  line-height: 1.15;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+h4, h5, h6 {
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  line-height: 1.35;
+}
+
+/* Site Container with Safe Padding */
+.site-container {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media (min-width: 640px) {
+  .site-container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (max-width: 390px) {
+  .site-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/* Hairline Structural Rules */
+.hairline-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-hairline);
+}
+
+.hairline-divider-subtle {
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-subtle);
+}
+
+/* Corporate Buttons */
+.btn-corp-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--bg-navy);
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.01em;
+  padding: 13px 26px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--bg-navy);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: 0 1px 3px rgba(11, 25, 44, 0.08);
+  white-space: normal;
+  text-align: center;
+}
+
+.btn-corp-primary:hover {
+  background-color: #172B4D;
+  border-color: #172B4D;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(11, 25, 44, 0.12);
+}
+
+.btn-corp-primary:active {
+  transform: translateY(0);
+}
+
+.btn-corp-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: transparent;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding: 12px 22px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: normal;
+  text-align: center;
+}
+
+.btn-corp-secondary:hover {
+  border-color: var(--text-primary);
+  background-color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+/* Text Links */
+.corp-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--brand-blue-dark);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.corp-text-link:hover {
+  color: var(--text-primary);
+}
+
+.corp-text-link svg {
+  transition: transform var(--transition-fast);
+}
+
+.corp-text-link:hover svg {
+  transform: translateX(4px);
+}
+
+/* Eyebrow Label */
+.eyebrow-tag {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-blue);
+  display: inline-block;
+  line-height: 1.4;
+}
+
+/* Section Spacing */
+.corp-section {
+  padding-top: 88px;
+  padding-bottom: 88px;
+  position: relative;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .corp-section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+}
+
+/* Editorial Photography Frame */
+.hero-photo-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  box-shadow: 0 16px 40px -12px rgba(11, 25, 44, 0.12);
+  border: 1px solid rgba(11, 25, 44, 0.08);
+  aspect-ratio: 4 / 3.2;
+  width: 100%;
+}
+
+.hero-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Static Large Tabular Statistics */
+.stat-number-editorial {
+  font-family: var(--font-sans);
+  font-feature-settings: "tnum" 1, "zero" 1;
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+}
+
+@media (max-width: 640px) {
+  .stat-number-editorial {
+    font-size: 2.75rem;
+  }
+}
+
+/* Table Container for Mobile Safe Scrolling */
+.table-responsive-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Modal Window */
+.corp-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(11, 25, 44, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+.corp-modal-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.corp-modal-container {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-md);
+  box-shadow: 0 25px 60px -15px rgba(11, 25, 44, 0.25);
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  transform: translateY(16px);
+  transition: transform var(--transition-normal);
+}
+
+.corp-modal-backdrop.open .corp-modal-container {
+  transform: translateY(0);
+}
+
+/* Accessibility Focus States */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--brand-blue);
+  outline-offset: 3px;
+}
+
+/* Interactive Tabs */
+.corp-tab-btn {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 12px 20px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.corp-tab-btn:hover {
+  color: var(--text-primary);
+}
+
+.corp-tab-btn.active {
+  color: var(--text-primary);
+  border-bottom-color: var(--bg-navy);
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .hero-photo-frame img {
+    animation: none !important;
+  }
+  .cta-ambient-glow {
+    animation: none !important;
+  }
+  .curtain-mask {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   HYBRID PREMIUM MOTION SYSTEM
+   Editorial Luxury + Cinematic Corporate + Technical Precision
+   ========================================================================== */
+
+/* Motion Timing Tokens */
+:root {
+  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-cinematic: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-precision: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 1. Header Sticky Elevation & Link Underline */
+header {
+  transition: background-color 260ms ease, box-shadow 260ms ease;
+}
+
+header.header-scrolled {
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 20px -2px rgba(11, 25, 44, 0.08);
+  border-bottom-color: rgba(226, 232, 240, 0.8);
+}
+
+.nav-link-editorial {
+  position: relative;
+  display: inline-block;
+  transition: color var(--transition-fast);
+}
+
+.nav-link-editorial::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--brand-blue);
+  transition: width 240ms var(--ease-editorial);
+  border-radius: 1px;
+}
+
+.nav-link-editorial:hover::after {
+  width: 100%;
+}
+
+/* 2. Hero Typography & Cinematic Image Zoom */
+.hero-line-mask {
+  display: block;
+  overflow: hidden;
+}
+
+.hero-line-inner {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+.hero-photo-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  box-shadow: 0 20px 48px -12px rgba(11, 25, 44, 0.16);
+  border: 1px solid rgba(11, 25, 44, 0.08);
+  aspect-ratio: 4 / 3.2;
+  width: 100%;
+  background-color: #E2E8F0;
+}
+
+.hero-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.0);
+  animation: kenBurnsZoom 12s var(--ease-cinematic) infinite alternate;
+  will-change: transform;
+}
+
+@keyframes kenBurnsZoom {
+  0% { transform: scale(1.0); }
+  100% { transform: scale(1.045); }
+}
+
+.curtain-mask {
+  position: absolute;
+  inset: 0;
+  background-color: var(--bg-canvas);
+  transform-origin: right center;
+  transition: transform 1000ms var(--ease-editorial);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.curtain-mask.revealed {
+  transform: scaleX(0);
+}
+
+/* 3. Hairline Scale-X Draw */
+.hairline-expand {
+  transform-origin: left center;
+  transition: transform 900ms var(--ease-editorial);
+}
+
+/* 4. Service Rows Interactive Elevation */
+.service-row {
+  transition: background-color 220ms ease, padding 220ms ease, border-color 220ms ease;
+  position: relative;
+  border-radius: var(--radius-sm);
+}
+
+.service-row:hover {
+  background-color: rgba(2, 132, 199, 0.03);
+}
+
+.service-arrow {
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: all 220ms var(--ease-editorial);
+}
+
+.service-row:hover .service-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 5. Talent Practice Precision Cards */
+.practice-card {
+  position: relative;
+  transition: transform 240ms var(--ease-editorial), border-color 240ms ease;
+}
+
+.practice-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--brand-blue);
+  transition: width 280ms var(--ease-editorial);
+}
+
+.practice-card:hover::before {
+  width: 100%;
+}
+
+.practice-node-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  background: rgba(2, 132, 199, 0.08);
+  border: 1px solid rgba(2, 132, 199, 0.2);
+  transition: all 260ms var(--ease-editorial);
+  flex-shrink: 0;
+}
+
+.practice-card:hover .practice-node-icon {
+  background: rgba(2, 132, 199, 0.16);
+  border-color: rgba(2, 132, 199, 0.6);
+  transform: scale(1.1);
+}
+
+.practice-svg-node .practice-node-orbit {
+  transition: transform 600ms var(--ease-editorial);
+  transform-origin: 8px 8px;
+}
+
+.practice-card:hover .practice-node-orbit {
+  transform: rotate(90deg);
+}
+
+.practice-network-bar {
+  animation: practiceDash 25s linear infinite;
+}
+
+@keyframes practiceDash {
+  to { stroke-dashoffset: -100; }
+}
+
+.practice-node-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--brand-blue);
+  display: inline-block;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.practice-card:hover .practice-node-dot {
+  transform: scale(1.3);
+  box-shadow: 0 0 10px rgba(2, 132, 199, 0.8);
+}
+
+/* 6. Operating Model Timeline (Signature Motion Graphic) */
+.timeline-track-desktop {
+  position: relative;
+  width: 100%;
+  height: 3px;
+  background-color: #E2E8F0;
+  margin-bottom: 28px;
+  border-radius: 2px;
+  overflow: visible;
+}
+
+.timeline-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 16.66%;
+  background: linear-gradient(90deg, #0284C7 0%, #0369A1 100%);
+  border-radius: 2px;
+  transition: width 700ms var(--ease-editorial);
+}
+
+.timeline-node-pin {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  border: 2px solid #CBD5E1;
+  transition: all 300ms var(--ease-editorial);
+  z-index: 2;
+}
+
+.timeline-node-pin.active {
+  background-color: var(--brand-blue);
+  border-color: #FFFFFF;
+  box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.25), 0 0 12px rgba(2, 132, 199, 0.4);
+}
+
+.timeline-stage-col {
+  transition: transform 240ms var(--ease-editorial), opacity 300ms ease;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+}
+
+.timeline-stage-col:hover {
+  background-color: rgba(2, 132, 199, 0.02);
+  transform: translateY(-2px);
+}
+
+.timeline-stage-col.active {
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 16px -2px rgba(11, 25, 44, 0.06);
+  border: 1px solid var(--border-hairline);
+}
+
+.timeline-stage-col.active h4 {
+  color: var(--brand-blue-dark);
+}
+
+/* 7. Final CTA Atmospheric Animated Ambient Glow */
+.cta-ambient-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 45%, rgba(2, 132, 199, 0.22) 0%, rgba(11, 25, 44, 0) 70%);
+  animation: ctaAtmosphereGlow 9s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes ctaAtmosphereGlow {
+  0% {
+    opacity: 0.35;
+    transform: scale(0.96) translateY(0);
+  }
+  100% {
+    opacity: 0.75;
+    transform: scale(1.08) translateY(-8px);
+  }
+}
+
+/* 8. Mobile Operating Model Vertical Connected Line */
+@media (max-width: 1023px) {
+  .timeline-stage-col {
+    position: relative;
+    padding-left: 20px;
+    border-left: 2px solid #E2E8F0;
+  }
+  .timeline-stage-col.active {
+    border-left-color: var(--brand-blue) !important;
+  }
+  .timeline-stage-col::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 20px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #CBD5E1;
+    transition: all 240ms ease;
+  }
+  .timeline-stage-col.active::before {
+    background-color: var(--brand-blue);
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.25);
+  }
+}
+
+/* 9. Pilot Stepper Interactive Polish */
+.pilot-step-btn {
+  transition: all 240ms var(--ease-editorial);
+  position: relative;
+}
+.pilot-step-btn.active {
+  border-color: var(--brand-navy) !important;
+  background-color: #FFFFFF !important;
+  box-shadow: 0 4px 16px -2px rgba(11, 25, 44, 0.08);
+}
+.pilot-step-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 16px;
+  right: 16px;
+  height: 3px;
+  background: var(--brand-blue);
+  border-radius: 2px 2px 0 0;
+}

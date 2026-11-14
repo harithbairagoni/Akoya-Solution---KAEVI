@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KAEVI | Global Workforce Partners — GCC-Focused Executive Talent Advisory</title>
+  <meta name="description" content="A GCC-focused workforce partner built around capability, quality, and accountable hiring execution. IT Staffing, GCC Talent, Permanent Hiring, RPO, and Workforce Solutions.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+
+  <!-- Editorial Google Fonts: Newsreader (Serif) & Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            corpNavy: '#0B192C',
+            corpNavyDeep: '#06111F',
+            corpSlate: '#334155',
+            corpMuted: '#64748B',
+            corpCanvas: '#FBFBFA',
+            corpSurface: '#FFFFFF',
+            corpSubtle: '#F5F5F2',
+            corpBorder: '#E2E8F0',
+            corpBlue: '#0284C7',
+            corpBlueDark: '#0369A1',
+            corpTeal: '#0D9488',
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+            serif: ['"Newsreader"', 'Georgia', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- GSAP & ScrollTrigger for Orchestrated Hybrid Motion -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Corporate Design System Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#FBFBFA] text-[#334155] antialiased min-h-screen relative font-sans selection:bg-[#0B192C] selection:text-white">
+
+  <!-- ========================================================================
+       1. NAVIGATION
+       Clean logo, five intuitive navigation links, and one primary CTA.
+       ======================================================================== -->
+  <header id="site-header" class="sticky top-0 z-40 bg-[#FFFFFF]/95 backdrop-blur-md border-b border-[#E2E8F0]">
+    <div class="site-container flex items-center justify-between h-20">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0284C7] rounded p-1">
+        <img src="assets/logo.svg" alt="KAEVI Global Workforce Partners" class="h-9 w-auto">
+      </a>
+
+      <!-- Five Intuitive Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-8 text-[0.9375rem] font-medium text-[#334155]" aria-label="Primary Navigation">
+        <a href="#gcc-context" class="nav-link-editorial hover:text-[#0B192C] py-2">The GCC Mandate</a>
+        <a href="#about" class="nav-link-editorial hover:text-[#0B192C] py-2">About KAEVI</a>
+        <a href="#services" class="nav-link-editorial hover:text-[#0B192C] py-2">Services</a>
+        <a href="#practices" class="nav-link-editorial hover:text-[#0B192C] py-2">Practices</a>
+        <a href="#governance" class="nav-link-editorial hover:text-[#0B192C] py-2">Governance</a>
+      </nav>
+
+      <!-- Primary Action Button -->
+      <div class="hidden sm:flex items-center gap-4">
+        <button type="button" class="btn-corp-primary open-briefing-modal group">
+          <span>Schedule an Executive Briefing</span>
+          <svg class="w-4 h-4 text-white transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="corp-mobile-toggle" type="button" class="lg:hidden p-2 text-[#334155] hover:text-[#0B192C] rounded-md focus:outline-none focus:ring-2 focus:ring-[#0284C7]" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="corp-mobile-drawer">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Backdrop -->
+  <div id="corp-mobile-backdrop" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out" aria-hidden="true"></div>
+
+  <!-- Mobile Drawer Navigation -->
+  <div id="corp-mobile-drawer" class="fixed inset-y-0 right-0 w-full max-w-xs bg-white border-l border-[#E2E8F0] p-6 z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between shadow-2xl invisible pointer-events-none" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
+    <div>
+      <div class="flex items-center justify-between pb-6 border-b border-[#E2E8F0]">
+        <img src="assets/logo.svg" alt="KAEVI" class="h-8 w-auto">
+        <button id="corp-mobile-close" type="button" class="p-2 text-slate-400 hover:text-slate-800" aria-label="Close menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <nav class="flex flex-col gap-4 mt-8 text-base font-medium">
+        <a href="#gcc-context" class="corp-mobile-link text-[#334155] hover:text-[#0B192C] py-1.5">The GCC Mandate</a>
+        <a href="#about" class="corp-mobile-link text-[#334155] hover:text-[#0B192C] py-1.5">About KAEVI</a>
+        <a href="#services" class="corp-mobile-link text-[#334155] hover:text-[#0B192C] py-1.5">Services</a>
+        <a href="#practices" class="corp-mobile-link text-[#334155] hover:text-[#0B192C] py-1.5">Practices</a>
+        <a href="#governance" class="corp-mobile-link text-[#334155] hover:text-[#0B192C] py-1.5">Governance</a>
+      </nav>
+    </div>
+    <div class="pt-6 border-t border-[#E2E8F0]">
+      <button type="button" class="w-full btn-corp-primary open-briefing-modal justify-center">
+        <span>Schedule an Executive Briefing</span>
+      </button>
+      <p class="text-[11px] text-center text-slate-500 mt-3">Connecting Talent. Enabling Growth.</p>
+    </div>
+  </div>
+
+  <main>
+    <!-- ========================================================================
+         2. HERO
+         Preserve headline, strong serif treatment, sophisticated editorial photograph,
+         communicate what, whom, why, action. Single dominant CTA + secondary text link.
+         Zero dashboard boxes.
+         ======================================================================== -->
+    <section class="corp-section pt-14 pb-20 lg:pt-20 lg:pb-28 bg-[#FBFBFA]">
+      <div class="site-container">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          <!-- Hero Text Narrative -->
+          <div class="lg:col-span-7 space-y-7">
+            
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="eyebrow-tag">GLOBAL WORKFORCE PARTNERS</span>
+              <span class="hidden sm:inline-block w-8 h-px bg-[#0284C7]/40"></span>
+              <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider block sm:inline">GCC Executive Search & Staffing</span>
+            </div>
+
+            <!-- Headline with Staggered Editorial Reveal Lines -->
+            <h1 class="text-3xl sm:text-5xl lg:text-[4.25rem] font-serif font-normal text-[#0B192C] leading-[1.14] tracking-[-0.02em] break-words">
+              <span class="hero-line-mask"><span class="hero-line-inner hero-line-1 block">Talent for the</span></span>
+              <span class="hero-line-mask mt-1 sm:mt-2"><em class="hero-line-inner hero-line-2 block italic font-serif text-[#0B192C]">mandates that matter.</em></span>
+            </h1>
+
+            <!-- Direct Business Proposition answering What, Whom, and Why -->
+            <p class="hero-paragraph text-base sm:text-lg text-[#334155] max-w-2xl font-normal leading-relaxed">
+              KAEVI is a GCC-focused workforce partner helping Global Capability Centres and multinational enterprises hire critical technical and functional talent. We combine mandate-led discovery, specialist search and accountable delivery to build teams that support business priorities.
+            </p>
+
+            <!-- Actions: One dominant CTA + secondary link -->
+            <div class="hero-actions flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 pt-2">
+              <button type="button" class="btn-corp-primary open-briefing-modal text-base px-8 py-4 w-full sm:w-auto group">
+                <span>Schedule an Executive Briefing</span>
+                <svg class="w-4 h-4 text-white transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+
+              <a href="#operating-model" class="corp-text-link text-base justify-center sm:justify-start group">
+                <span>Explore Our Operating Model</span>
+                <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+
+            <!-- Core Services Taxonomy Strip -->
+            <div class="hero-taxonomy pt-8 border-t border-[#E2E8F0] flex flex-wrap items-center gap-x-3 gap-y-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
+              <span>IT Staffing</span>
+              <span class="text-slate-300">•</span>
+              <span>GCC Talent</span>
+              <span class="text-slate-300">•</span>
+              <span>Permanent Hiring</span>
+              <span class="text-slate-300">•</span>
+              <span>RPO</span>
+              <span class="text-slate-300">•</span>
+              <span>Workforce Solutions</span>
+            </div>
+
+          </div>
+
+          <!-- Hero Supporting Visual: Sophisticated Editorial Architecture Photography with Cinematic Ken Burns & Curtain Reveal -->
+          <div class="lg:col-span-5">
+            <div class="space-y-3">
+              <div class="hero-photo-frame">
+                <div class="curtain-mask" id="hero-curtain-mask"></div>
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85" alt="Modern Global Corporate Architecture — KAEVI GCC Talent Advisory" loading="eager" class="hero-photo-img">
+              </div>
+              <div class="flex items-center justify-between text-xs text-slate-500 pt-1 font-mono">
+                <span>Enterprise Talent Infrastructure</span>
+                <span>Bengaluru • Hyderabad • Global Reach</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="hairline-divider"></div>
+
+    <!-- ========================================================================
+         3. GCC CONTEXT
+         Statistics-led with animated data storytelling and horizontal line reveals.
+         Sourced data: 2,117 GCCs, 2.36M employed, 87% process ownership.
+         ======================================================================== -->
+    <section id="gcc-context" class="corp-section bg-[#FFFFFF]">
+      <div class="site-container">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start mb-16">
+          
+          <!-- Left Column: Upstream Shift Narrative -->
+          <div class="lg:col-span-5 space-y-5">
+            <span class="eyebrow-tag">THE GCC CONTEXT</span>
+            <h2 class="text-3xl sm:text-5xl font-serif text-[#0B192C] tracking-tight leading-tight">
+              The GCC mandate has moved upstream.
+            </h2>
+            <p class="text-base sm:text-lg text-[#334155] leading-relaxed">
+              India is no longer just a delivery location. GCCs are taking decisive ownership of enterprise-critical work, leading global architecture, generative AI research, and end-to-end P&L systems.
+            </p>
+          </div>
+
+          <!-- Right Column: Open Light Statistics with Fine Hairlines and Smooth Count-up -->
+          <div class="lg:col-span-7 space-y-6" id="gcc-stats-container">
+            
+            <!-- Metric 01 -->
+            <div class="stat-block pb-6 border-b border-[#E2E8F0] hairline-expand flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+              <div>
+                <div class="stat-number-editorial" data-stat-target="2117" data-stat-decimals="0">2,117</div>
+                <h4 class="text-base font-bold text-[#0B192C] mt-1">GCCs in India</h4>
+                <p class="text-xs text-slate-600 mt-0.5">Expanding into tier-1 tech centers and high-density specialized hubs.</p>
+              </div>
+              <span class="text-[11px] text-slate-400 font-mono shrink-0">nasscom–Zinnov GCC Landscape FY2026</span>
+            </div>
+
+            <!-- Metric 02 -->
+            <div class="stat-block pb-6 border-b border-[#E2E8F0] hairline-expand flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+              <div>
+                <div class="stat-number-editorial text-[#0284C7]" data-stat-target="2.36" data-stat-decimals="2" data-stat-suffix="M">2.36M</div>
+                <h4 class="text-base font-bold text-[#0B192C] mt-1">Professionals Employed</h4>
+                <p class="text-xs text-slate-600 mt-0.5">Senior engineers, platform architects, AI researchers, and functional leaders.</p>
+              </div>
+              <span class="text-[11px] text-slate-400 font-mono shrink-0">nasscom–Zinnov GCC Landscape FY2026</span>
+            </div>
+
+            <!-- Metric 03 -->
+            <div class="stat-block pb-6 border-b border-[#E2E8F0] hairline-expand flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+              <div>
+                <div class="stat-number-editorial" data-stat-target="87" data-stat-decimals="0" data-stat-suffix="%">87%</div>
+                <h4 class="text-base font-bold text-[#0B192C] mt-1">Manage End-to-End Processes</h4>
+                <p class="text-xs text-slate-600 mt-0.5">Directly governing global enterprise infrastructure, product lines, and operational units.</p>
+              </div>
+              <span class="text-[11px] text-slate-400 font-mono shrink-0">EY GCC Pulse Survey 2025</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Full-Width Editorial Thesis Statement (Open without boxed card) -->
+        <div class="pt-10 pb-4 border-t border-[#E2E8F0]">
+          <div class="max-w-4xl space-y-3">
+            <span class="eyebrow-tag">STRATEGIC PRINCIPLE</span>
+            <h3 class="text-2xl sm:text-4xl font-serif text-[#0B192C] leading-snug">
+              When the mandate changes, the talent partner has to change with it.
+            </h3>
+            <p class="text-sm text-[#475569] leading-relaxed max-w-2xl">
+              Legacy staffing agencies rely on keyword scraping and CV volume. Upstream GCC mandates require engineering depth, compensation intelligence, and uncompromising calibration.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="hairline-divider"></div>
+
+    <!-- ========================================================================
+         4. HIRING REALITY
+         Balanced editorial composition rather than four repetitive boxes.
+         Two empirical callouts + open numbered frictions list.
+         ======================================================================== -->
+    <section class="corp-section bg-[#FBFBFA]">
+      <div class="site-container">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          
+          <!-- Left Column: The Empirical Reality -->
+          <div class="lg:col-span-5 space-y-8">
+            <div class="space-y-4">
+              <span class="eyebrow-tag">THE HIRING REALITY</span>
+              <h2 class="text-3xl sm:text-5xl font-serif text-[#0B192C] leading-tight">
+                Demand is rising.<br>
+                The talent equation is getting harder.
+              </h2>
+              <p class="text-sm text-[#475569] leading-relaxed">
+                As global centers compete for identical senior practitioners, standard recruitment channels fail. Notice period shopping, compensation drift, and unqualified resume volume jeopardize delivery commitments.
+              </p>
+            </div>
+
+            <!-- Two Macro Metrics with Open Hairline Separator -->
+            <div class="pt-6 border-t border-[#E2E8F0] space-y-6">
+              <div>
+                <div class="flex items-baseline gap-3">
+                  <span class="text-4xl sm:text-5xl font-bold font-serif text-[#0B192C]">66%</span>
+                  <span class="text-xs font-mono uppercase text-slate-400">of GCCs surveyed</span>
+                </div>
+                <p class="text-xs text-[#475569] mt-1 leading-normal">
+                  Report severe difficulty attracting niche tech talent across AI/ML, Cloud SRE, and Systems Architecture.
+                </p>
+              </div>
+
+              <div class="pt-4 border-t border-[#EBEBE6]">
+                <div class="flex items-baseline gap-3">
+                  <span class="text-4xl sm:text-5xl font-bold font-serif text-[#0284C7]">54%</span>
+                  <span class="text-xs font-mono uppercase text-slate-400">Market Pressures</span>
+                </div>
+                <p class="text-xs text-[#475569] mt-1 leading-normal">
+                  Report rising compensation costs, counteroffer friction, and candidate dropout during 60–90 day notice windows.
+                </p>
+              </div>
+              
+              <div class="text-[11px] text-slate-400 font-mono">Source: EY GCC Pulse Survey 2025</div>
+            </div>
+
+            <div class="p-5 bg-[#0B192C] text-white rounded-lg">
+              <span class="text-xs font-mono font-bold text-[#38BDF8] uppercase tracking-wider block mb-1">Our Perspective</span>
+              <p class="text-xs text-slate-200 leading-relaxed">
+                The answer is a better hiring operating model, not a bigger pile of unvetted CVs.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right Column: The Four Frictions (Open Numbered Editorial List) -->
+          <div class="lg:col-span-7">
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-widest block mb-4">THE FOUR SYSTEMIC FRICTIONS</span>
+
+            <div class="divide-y divide-[#E2E8F0] border-y border-[#E2E8F0]">
+              
+              <!-- Friction 01 -->
+              <div class="py-6 flex items-start gap-6">
+                <span class="text-xl font-serif font-bold text-[#0284C7] shrink-0 pt-0.5">01</span>
+                <div class="space-y-1">
+                  <h4 class="text-lg font-bold text-[#0B192C]">Rare skill combinations</h4>
+                  <p class="text-xs sm:text-sm text-[#475569] leading-relaxed">
+                    Technical depth + industry context + business judgment. Upstream GCC mandates require practitioners who can communicate with global business stakeholders, not isolated coders.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Friction 02 -->
+              <div class="py-6 flex items-start gap-6">
+                <span class="text-xl font-serif font-bold text-[#0284C7] shrink-0 pt-0.5">02</span>
+                <div class="space-y-1">
+                  <h4 class="text-lg font-bold text-[#0B192C]">Speed vs. confidence</h4>
+                  <p class="text-xs sm:text-sm text-[#475569] leading-relaxed">
+                    Hiring managers need progress without compromising the bar. Rushed screening leads to high post-joining attrition; protracted processes lose top talent to competing global offers.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Friction 03 -->
+              <div class="py-6 flex items-start gap-6">
+                <span class="text-xl font-serif font-bold text-[#0284C7] shrink-0 pt-0.5">03</span>
+                <div class="space-y-1">
+                  <h4 class="text-lg font-bold text-[#0B192C]">Offer-to-join uncertainty</h4>
+                  <p class="text-xs sm:text-sm text-[#475569] leading-relaxed">
+                    Compensation, counteroffers, notice period vulnerability and intent matter early. Unvetted candidates routinely accept multiple offers during Indian 60–90 day notice periods.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Friction 04 -->
+              <div class="py-6 flex items-start gap-6">
+                <span class="text-xl font-serif font-bold text-[#0284C7] shrink-0 pt-0.5">04</span>
+                <div class="space-y-1">
+                  <h4 class="text-lg font-bold text-[#0B192C]">Unpredictable ramp-ups</h4>
+                  <p class="text-xs sm:text-sm text-[#475569] leading-relaxed">
+                    Capacity must flex as enterprise priorities, budgets, and product roadmaps change. Inflexible recruitment mechanisms cannot handle sudden, high-urgency squad spikes.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <div class="hairline-divider"></div>
+
+    <!-- ========================================================================
+         5. ABOUT KAEVI
+         Brand statement, not a dashboard. Large editorial typography, open narrative.
+         Philosophy: "Business needs first. Talent strategy follows."
+         ======================================================================== -->
+    <section id="about" class="corp-section bg-[#FFFFFF]">
+      <div class="site-container">
+        
+        <!-- Large Brand Statement -->
+        <div class="max-w-4xl mb-16 space-y-4">
+          <span class="eyebrow-tag">ABOUT KAEVI</span>
+          <h2 class="text-3xl sm:text-5xl lg:text-6xl font-serif text-[#0B192C] tracking-tight leading-tight">
+            Business needs first.<br>
+            <em class="italic text-[#0284C7]">Talent strategy follows.</em>
+          </h2>
+          <p class="text-lg sm:text-xl text-[#334155] leading-relaxed max-w-3xl pt-2">
+            A talent company designed to work alongside GCC leaders, talent acquisition teams, and engineering managers as an accountable execution partner—from mandate calibration to Day-1 onboarding.
+          </p>
+        </div>
+
+        <!-- Three Open Architectural Pillars with Fine Hairlines -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pt-8 border-t border-[#E2E8F0]">
+          
+          <div class="about-pillar space-y-3">
+            <span class="text-sm font-serif font-bold text-[#0284C7] block">01 // CONTEXT</span>
+            <h3 class="text-xl font-bold text-[#0B192C]">GCC Context</h3>
+            <p class="text-xs sm:text-sm text-[#475569] leading-relaxed">
+              Understand why a role exists before searching for who fills it. We dissect organizational reporting lines into global headquarters, engineering ownership, and team culture before writing a search brief.
+            </p>
+          </div>
+
+          <div class="about-pillar space-y-3">
+            <span class="text-sm font-serif font-bold text-[#0284C7] block">02 // REACH</span>
+            <h3 class="text-xl font-bold text-[#0B192C]">Cross-Border Lens</h3>
+            <p class="text-xs sm:text-sm text-[#475569] leading-relaxed">
+              Look beyond a single talent pool when mandates demand it. We map practitioners across India's primary centers and international diaspora returnees to secure scarce domain depth.
+            </p>
+          </div>
+
+          <div class="about-pillar space-y-3">
+            <span class="text-sm font-serif font-bold text-[#0284C7] block">03 // TRANSPARENCY</span>
+            <h3 class="text-xl font-bold text-[#0B192C]">Visible Delivery</h3>
+            <p class="text-xs sm:text-sm text-[#475569] leading-relaxed">
+              Clear ownership, transparent funnel reviews, and early risk flags. Structured weekly scorecards ensure leadership always knows what is moving, what is stuck, and who owns the next action.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <div class="hairline-divider"></div>
+
+    <!-- ========================================================================
+         6. SERVICES
+         Five offerings with clear descriptions. Easy to scan, spacious layout,
+         no identical boxed cards.
+         ======================================================================== -->
+    <section id="services" class="corp-section bg-[#FBFBFA]">
+      <div class="site-container">
+        
+        <div class="max-w-3xl mb-14">
+          <span class="eyebrow-tag mb-2">WHAT WE DO</span>
+          <h2 class="text-3xl sm:text-5xl font-serif text-[#0B192C] tracking-tight mb-4 leading-tight">
+            One partner. Five ways to build capability.
+          </h2>
+          <p class="text-base sm:text-lg text-[#334155] leading-relaxed">
+            Use KAEVI for an individual critical hire, a new squad, or an embedded talent acquisition program.
+          </p>
+        </div>
+
+        <!-- Spacious Editorial Service Index (Horizontal Hairline Rows with Subtle Hover Elevation) -->
+        <div class="divide-y divide-[#E2E8F0] border-y border-[#E2E8F0]">
+          
+          <!-- Service 01 -->
+          <div class="service-row py-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline group px-4 -mx-4 cursor-default">
+            <div class="md:col-span-1 text-sm font-serif font-bold text-slate-400 group-hover:text-[#0284C7] transition-colors">01</div>
+            <div class="md:col-span-4 flex items-center justify-between">
+              <div>
+                <h3 class="text-xl font-serif font-bold text-[#0B192C] group-hover:translate-x-1 transition-transform">IT Staffing</h3>
+                <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider block mt-1">Flexible Capacity</span>
+              </div>
+              <svg class="service-arrow w-4 h-4 text-[#0284C7] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+            <div class="md:col-span-7">
+              <p class="text-xs sm:text-sm text-[#475569] leading-relaxed">
+                Contract and project-based technology talent for changing workloads, sudden project spikes, and specialized time-bound deliverables without long-term overhead.
+              </p>
+            </div>
+          </div>
+
+          <!-- Service 02 -->
+          <div class="service-row py-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline group px-4 -mx-4 cursor-default">
+            <div class="md:col-span-1 text-sm font-serif font-bold text-slate-400 group-hover:text-[#0284C7] transition-colors">02</div>
+            <div class="md:col-span-4 flex items-center justify-between">
+              <div>
+                <h3 class="text-xl font-serif font-bold text-[#0B192C] group-hover:translate-x-1 transition-transform">GCC Talent</h3>
+                <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider block mt-1">Maturity Focused</span>
+              </div>
+              <svg class="service-arrow w-4 h-4 text-[#0284C7] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+            <div class="md:col-span-7">
+              <p class="text-xs sm:text-sm text-[#475569] leading-relaxed">
+                Hiring directly aligned with India GCC mandates, functional charters, global governance matrices, and enterprise maturity stages.
+              </p>
+            </div>
+          </div>
+
+          <!-- Service 03 -->
+          <div class="service-row py-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline group px-4 -mx-4 cursor-default">
+            <div class="md:col-span-1 text-sm font-serif font-bold text-slate-400 group-hover:text-[#0284C7] transition-colors">03</div>
+            <div class="md:col-span-4 flex items-center justify-between">
+              <div>
+                <h3 class="text-xl font-serif font-bold text-[#0B192C] group-hover:translate-x-1 transition-transform">Permanent Hiring</h3>
+                <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider block mt-1">Specialist & Leadership</span>
+              </div>
+              <svg class="service-arrow w-4 h-4 text-[#0284C7] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+            <div class="md:col-span-7">
+              <p class="text-xs sm:text-sm text-[#475569] leading-relaxed">
+                Specialist and executive leadership search, from individual contributor Principal Engineers to Directors, VPs, and Center Heads.
+              </p>
+            </div>
+          </div>
+
+          <!-- Service 04 -->
+          <div class="service-row py-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline group px-4 -mx-4 cursor-default">
+            <div class="md:col-span-1 text-sm font-serif font-bold text-slate-400 group-hover:text-[#0284C7] transition-colors">04</div>
+            <div class="md:col-span-4 flex items-center justify-between">
+              <div>
+                <h3 class="text-xl font-serif font-bold text-[#0B192C] group-hover:translate-x-1 transition-transform">Recruitment Process Outsourcing</h3>
+                <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider block mt-1">Embedded RPO Pods</span>
+              </div>
+              <svg class="service-arrow w-4 h-4 text-[#0284C7] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+            <div class="md:col-span-7">
+              <p class="text-xs sm:text-sm text-[#475569] leading-relaxed">
+                Dedicated sourcing and delivery pods embedded inside your organization for recurring, sustained hiring demand and high-volume squads.
+              </p>
+            </div>
+          </div>
+
+          <!-- Service 05 -->
+          <div class="service-row py-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline group px-4 -mx-4 cursor-default">
+            <div class="md:col-span-1 text-sm font-serif font-bold text-slate-400 group-hover:text-[#0284C7] transition-colors">05</div>
+            <div class="md:col-span-4 flex items-center justify-between">
+              <div>
+                <h3 class="text-xl font-serif font-bold text-[#0B192C] group-hover:translate-x-1 transition-transform">Workforce Solutions</h3>
+                <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider block mt-1">Strategic Programs</span>
+              </div>
+              <svg class="service-arrow w-4 h-4 text-[#0284C7] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+            <div class="md:col-span-7">
+              <p class="text-xs sm:text-sm text-[#475569] leading-relaxed">
+                Custom hiring programs, large-scale multi-city ramps, ecosystem talent mapping, compensation benchmarking, and workforce operational support.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <div class="hairline-divider"></div>
+
+    <!-- ========================================================================
+         7. TALENT EXPERTISE
+         Showcase all six specialist capability areas in an open architectural grid.
+         ======================================================================== -->
+    <section id="practices" class="corp-section bg-[#FFFFFF]">
+      <div class="site-container">
+        
+        <div class="max-w-3xl mb-14">
+          <span class="eyebrow-tag mb-2">TALENT PRACTICES</span>
+          <h2 class="text-3xl sm:text-5xl font-serif text-[#0B192C] tracking-tight mb-4 leading-tight">
+            Built for the skills GCCs compete hardest for.
+          </h2>
+          <p class="text-base sm:text-lg text-[#334155] leading-relaxed">
+            Search aligned to technical depth, business use cases, and the role's place in your wider engineering capability.
+          </p>
+        </div>
+
+        <!-- Technical Precision SVG Network Bus (Desktop) -->
+        <div class="hidden lg:block w-full mb-8 relative">
+          <svg class="w-full h-4 text-slate-300" viewBox="0 0 1100 16" fill="none" preserveAspectRatio="none">
+            <line x1="20" y1="8" x2="1080" y2="8" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="4 4" class="practice-network-bar" />
+            <circle cx="183" cy="8" r="3.5" fill="#0284C7" />
+            <circle cx="550" cy="8" r="3.5" fill="#0284C7" />
+            <circle cx="916" cy="8" r="3.5" fill="#0284C7" />
+          </svg>
+        </div>
+
+        <!-- Open 3-Column Matrix separated by Hairlines with Technical Node Precision -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          
+          <div class="practice-card space-y-3 pb-6 border-b border-[#E2E8F0] pt-2">
+            <div class="flex items-center gap-2.5">
+              <span class="practice-node-icon">
+                <svg class="w-3.5 h-3.5 text-sky-600 practice-svg-node" viewBox="0 0 16 16" fill="none">
+                  <circle cx="8" cy="8" r="2.5" fill="currentColor"/>
+                  <circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2" class="practice-node-orbit"/>
+                </svg>
+              </span>
+              <h4 class="text-lg font-serif font-bold text-[#0B192C]">AI, Data & Analytics</h4>
+            </div>
+            <p class="text-xs sm:text-sm text-[#475569] leading-relaxed">AI/ML, LLM research, data engineering, BI, and real-time enterprise analytics.</p>
+            <div class="pt-2 text-[11px] font-semibold text-slate-500 font-mono">
+              PyTorch • LLM Deployment • Snowflake • Databricks
+            </div>
+          </div>
+
+          <div class="practice-card space-y-3 pb-6 border-b border-[#E2E8F0] pt-2">
+            <div class="flex items-center gap-2.5">
+              <span class="practice-node-icon">
+                <svg class="w-3.5 h-3.5 text-sky-600 practice-svg-node" viewBox="0 0 16 16" fill="none">
+                  <circle cx="8" cy="8" r="2.5" fill="currentColor"/>
+                  <circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2" class="practice-node-orbit"/>
+                </svg>
+              </span>
+              <h4 class="text-lg font-serif font-bold text-[#0B192C]">Product & Engineering</h4>
+            </div>
+            <p class="text-xs sm:text-sm text-[#475569] leading-relaxed">Product management, full-stack, distributed backend systems, QA/SDET, and architecture.</p>
+            <div class="pt-2 text-[11px] font-semibold text-slate-500 font-mono">
+              Distributed Backend • React / Go • Java • SDET
+            </div>
+          </div>
+
+          <div class="practice-card space-y-3 pb-6 border-b border-[#E2E8F0] pt-2">
+            <div class="flex items-center gap-2.5">
+              <span class="practice-node-icon">
+                <svg class="w-3.5 h-3.5 text-sky-600 practice-svg-node" viewBox="0 0 16 16" fill="none">
+                  <circle cx="8" cy="8" r="2.5" fill="currentColor"/>
+                  <circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2" class="practice-node-orbit"/>
+                </svg>
+              </span>
+              <h4 class="text-lg font-serif font-bold text-[#0B192C]">Cloud & Platform</h4>
+            </div>
+            <p class="text-xs sm:text-sm text-[#475569] leading-relaxed">Cloud engineering, Site Reliability Engineering (SRE), DevOps, infrastructure, and automation.</p>
+            <div class="pt-2 text-[11px] font-semibold text-slate-500 font-mono">
+              AWS / Azure • Kubernetes • SRE 24/7 • Terraform
+            </div>
+          </div>
+
+          <div class="practice-card space-y-3 pb-6 border-b border-[#E2E8F0] pt-2">
+            <div class="flex items-center gap-2.5">
+              <span class="practice-node-icon">
+                <svg class="w-3.5 h-3.5 text-sky-600 practice-svg-node" viewBox="0 0 16 16" fill="none">
+                  <circle cx="8" cy="8" r="2.5" fill="currentColor"/>
+                  <circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2" class="practice-node-orbit"/>
+                </svg>
+              </span>
+              <h4 class="text-lg font-serif font-bold text-[#0B192C]">Cybersecurity & Risk</h4>
+            </div>
+            <p class="text-xs sm:text-sm text-[#475569] leading-relaxed">Application security (AppSec), cloud security posture, GRC, and global security operations.</p>
+            <div class="pt-2 text-[11px] font-semibold text-slate-500 font-mono">
+              AppSec • CSPM • Zero Trust • SOC Operations
+            </div>
+          </div>
+
+          <div class="practice-card space-y-3 pb-6 border-b border-[#E2E8F0] pt-2">
+            <div class="flex items-center gap-2.5">
+              <span class="practice-node-icon">
+                <svg class="w-3.5 h-3.5 text-sky-600 practice-svg-node" viewBox="0 0 16 16" fill="none">
+                  <circle cx="8" cy="8" r="2.5" fill="currentColor"/>
+                  <circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2" class="practice-node-orbit"/>
+                </svg>
+              </span>
+              <h4 class="text-lg font-serif font-bold text-[#0B192C]">Enterprise Applications</h4>
+            </div>
+            <p class="text-xs sm:text-sm text-[#475569] leading-relaxed">SAP S/4HANA, Salesforce, Oracle ERP, enterprise integration middleware, and business systems.</p>
+            <div class="pt-2 text-[11px] font-semibold text-slate-500 font-mono">
+              SAP S/4 • Salesforce • ERP Systems • Middleware
+            </div>
+          </div>
+
+          <div class="practice-card space-y-3 pb-6 border-b border-[#E2E8F0] pt-2">
+            <div class="flex items-center gap-2.5">
+              <span class="practice-node-icon">
+                <svg class="w-3.5 h-3.5 text-sky-600 practice-svg-node" viewBox="0 0 16 16" fill="none">
+                  <circle cx="8" cy="8" r="2.5" fill="currentColor"/>
+                  <circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2" class="practice-node-orbit"/>
+                </svg>
+              </span>
+              <h4 class="text-lg font-serif font-bold text-[#0B192C]">Business & Operations</h4>
+            </div>
+            <p class="text-xs sm:text-sm text-[#475569] leading-relaxed">Global FP&A finance, HR leadership, strategic procurement, shared services, and transformation.</p>
+            <div class="pt-2 text-[11px] font-semibold text-slate-500 font-mono">
+              Global Finance • Strategic Sourcing • HR Shared Services
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <div class="hairline-divider"></div>
+
+    <!-- ========================================================================
+         8. ENGAGEMENT MODELS
+         Establish, Expand, Transform and Sustain.
+         ======================================================================== -->
+    <section class="corp-section bg-[#FBFBFA]">
+      <div class="site-container">
+        
+        <div class="max-w-3xl mb-12">
+          <span class="eyebrow-tag mb-2">WHERE WE FIT</span>
+          <h2 class="text-3xl sm:text-5xl font-serif text-[#0B192C] tracking-tight mb-4 leading-tight">
+            One GCC. Four very different talent moments.
+          </h2>
+          <p class="text-base sm:text-lg text-[#334155] leading-relaxed">
+            The engagement adapts to what your center is trying to achieve, not the other way around. Select an operational phase to view calibrated delivery:
+          </p>
+        </div>
+
+        <!-- Clean Editorial Tab Navigation -->
+        <div class="flex border-b border-[#E2E8F0] mb-8 overflow-x-auto" role="tablist">
+          <button type="button" class="lifecycle-tab-btn active px-6 py-3 font-semibold text-sm border-b-2 border-slate-900 text-slate-900 bg-white" data-moment="establish">
+            01 Establish
+          </button>
+          <button type="button" class="lifecycle-tab-btn px-6 py-3 font-semibold text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-900" data-moment="expand">
+            02 Expand
+          </button>
+          <button type="button" class="lifecycle-tab-btn px-6 py-3 font-semibold text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-900" data-moment="transform">
+            03 Transform
+          </button>
+          <button type="button" class="lifecycle-tab-btn px-6 py-3 font-semibold text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-900" data-moment="sustain">
+            04 Sustain
+          </button>
+        </div>
+
+        <!-- Dynamic Open Narrative Panel -->
+        <div id="lifecycle-content-panel" class="pt-4 transition-opacity">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            
+            <div class="lg:col-span-7 space-y-4">
+              <span class="eyebrow-tag">MOMENT 01 // ESTABLISH</span>
+              <h3 class="text-2xl sm:text-3xl font-serif text-slate-900 leading-tight">Launch a new function</h3>
+              <p class="text-sm font-medium text-slate-600">Early leadership, foundational squads and critical specialist roles.</p>
+              <p class="text-xs sm:text-sm text-slate-700 leading-relaxed pt-1">
+                When establishing a new Center of Excellence or engineering division in India, early leadership choices determine culture and technical velocity for years. KAEVI calibrates the founding Director, Principal Architects, and foundational engineering squads.
+              </p>
+              <div class="pt-4 border-t border-slate-200">
+                <span class="text-xs font-semibold text-slate-900 uppercase tracking-wider block mb-1">Delivery Cadence</span>
+                <p class="text-xs text-sky-800 font-medium">Calibrated 1-on-1 executive search with weekly stakeholder alignment.</p>
+              </div>
+            </div>
+
+            <div class="lg:col-span-5 pt-2">
+              <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wider mb-3">Typical Mandate Scope</h4>
+              <ul class="space-y-2.5 text-xs text-slate-700">
+                <li class="flex items-center gap-2 pb-2 border-b border-slate-200">
+                  <span class="w-1.5 h-1.5 rounded-full bg-sky-700"></span>
+                  <span>Head of Engineering / GCC Center Director</span>
+                </li>
+                <li class="flex items-center gap-2 pb-2 border-b border-slate-200">
+                  <span class="w-1.5 h-1.5 rounded-full bg-sky-700"></span>
+                  <span>Principal Systems Architects & Core Leads</span>
+                </li>
+                <li class="flex items-center gap-2 pb-2 border-b border-slate-200">
+                  <span class="w-1.5 h-1.5 rounded-full bg-sky-700"></span>
+                  <span>Founding Engineering Managers & Staff Specialists</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-sky-700"></span>
+                  <span>People Operations & Strategic Talent Lead</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="hairline-divider"></div>
+
+    <!-- ========================================================================
+         9. OPERATING MODEL
+         Professional process journey with linear progression.
+         Six stages: Calibrate → Map → Source → Qualify → Close → Follow Through.
+         ======================================================================== -->
+    <section id="operating-model" class="corp-section bg-[#FFFFFF]">
+      <div class="site-container">
+        
+        <div class="max-w-3xl mb-14">
+          <span class="eyebrow-tag mb-2">HOW WE OPERATE</span>
+          <h2 class="text-3xl sm:text-5xl font-serif text-[#0B192C] tracking-tight mb-4 leading-tight">
+            A disciplined process from intake to joining.
+          </h2>
+          <p class="text-base sm:text-lg text-[#334155] leading-relaxed">
+            The delivery design is simple: fewer assumptions, faster feedback, and named ownership at every step.
+          </p>
+        </div>
+
+        <!-- Signature Process Timeline Graphic (Horizontal Desktop Track with Progress Fill) -->
+        <div class="hidden lg:block timeline-track-desktop">
+          <div id="timeline-progress-bar" class="timeline-progress-bar"></div>
+          <div class="timeline-node-pin active" style="left: 8.33%;" data-stage="0"></div>
+          <div class="timeline-node-pin" style="left: 25%;" data-stage="1"></div>
+          <div class="timeline-node-pin" style="left: 41.66%;" data-stage="2"></div>
+          <div class="timeline-node-pin" style="left: 58.33%;" data-stage="3"></div>
+          <div class="timeline-node-pin" style="left: 75%;" data-stage="4"></div>
+          <div class="timeline-node-pin" style="left: 91.66%;" data-stage="5"></div>
+        </div>
+
+        <!-- Seamless Process Journey Strip -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 sm:gap-6 mb-12">
+          
+          <div class="timeline-stage-col active space-y-2 pb-6 border-b-2 border-slate-900 lg:border-b-0 pt-4" data-stage="0">
+            <span class="text-xs font-serif font-bold text-[#0284C7] block">01</span>
+            <h4 class="text-base font-bold text-[#0B192C]">Calibrate</h4>
+            <p class="text-xs text-[#475569] leading-relaxed">Role outcome, stack, team context, compensation and trade-offs.</p>
+          </div>
+
+          <div class="timeline-stage-col space-y-2 pb-6 border-b-2 border-slate-200 lg:border-b-0 pt-4" data-stage="1">
+            <span class="text-xs font-serif font-bold text-[#0284C7] block">02</span>
+            <h4 class="text-base font-bold text-[#0B192C]">Map</h4>
+            <p class="text-xs text-[#475569] leading-relaxed">Talent pools, availability, competition and live market compensation signals.</p>
+          </div>
+
+          <div class="timeline-stage-col space-y-2 pb-6 border-b-2 border-slate-200 lg:border-b-0 pt-4" data-stage="2">
+            <span class="text-xs font-serif font-bold text-[#0284C7] block">03</span>
+            <h4 class="text-base font-bold text-[#0B192C]">Source</h4>
+            <p class="text-xs text-[#475569] leading-relaxed">Targeted outreach with role-specific screening criteria to passive talent.</p>
+          </div>
+
+          <div class="timeline-stage-col space-y-2 pb-6 border-b-2 border-slate-200 lg:border-b-0 pt-4" data-stage="3">
+            <span class="text-xs font-serif font-bold text-[#0284C7] block">04</span>
+            <h4 class="text-base font-bold text-[#0B192C]">Qualify</h4>
+            <p class="text-xs text-[#475569] leading-relaxed">Skill evidence, motivation, logistics, and joining risk assessment.</p>
+          </div>
+
+          <div class="timeline-stage-col space-y-2 pb-6 border-b-2 border-slate-200 lg:border-b-0 pt-4" data-stage="4">
+            <span class="text-xs font-serif font-bold text-[#0284C7] block">05</span>
+            <h4 class="text-base font-bold text-[#0B192C]">Close</h4>
+            <p class="text-xs text-[#475569] leading-relaxed">Interview flow, rapid feedback loops, offer structuring, and counteroffer hedging.</p>
+          </div>
+
+          <div class="timeline-stage-col space-y-2 pb-6 border-b-2 border-slate-200 lg:border-b-0 pt-4" data-stage="5">
+            <span class="text-xs font-serif font-bold text-[#0284C7] block">06</span>
+            <h4 class="text-base font-bold text-[#0B192C]">Follow through</h4>
+            <p class="text-xs text-[#475569] leading-relaxed">Pre-joining touchpoints, resignation tracking, Day-1 joining and 90-day check-ins.</p>
+          </div>
+
+        </div>
+
+        <div class="p-6 bg-[#F5F5F2] rounded border border-[#EBEBE6] text-center text-xs sm:text-sm font-semibold text-[#0B192C]">
+          A single owner. Clear feedback loops. No surprises at offer stage.
+        </div>
+
+      </div>
+    </section>
+
+    <div class="hairline-divider"></div>
+
+    <!-- ========================================================================
+         10. QUALITY & GOVERNANCE
+         Communicate candidate evaluation and delivery accountability without box spam.
+         5-Point candidate review lens + executive data table.
+         ======================================================================== -->
+    <section id="governance" class="corp-section bg-[#FBFBFA]">
+      <div class="site-container">
+        
+        <!-- Part A: Quality by Design -->
+        <div class="max-w-3xl mb-12">
+          <span class="eyebrow-tag mb-2">QUALITY BY DESIGN</span>
+          <h2 class="text-3xl sm:text-5xl font-serif text-[#0B192C] tracking-tight mb-4 leading-tight">
+            No resume dumping.
+          </h2>
+          <p class="text-base sm:text-lg text-[#334155] leading-relaxed">
+            Our shortlist makes the hiring manager's next decision easier. We reject unvetted CV scraping in favor of an accountable five-point diagnostic:
+          </p>
+        </div>
+
+        <!-- Open 5-Point Diagnostic Lens (Hairline Columns) -->
+        <div class="grid grid-cols-1 sm:grid-cols-5 gap-6 mb-12 pt-6 border-t border-[#E2E8F0]">
+          <div class="space-y-2">
+            <span class="text-xs font-serif font-bold text-[#0284C7] block">01 EVIDENCE</span>
+            <h4 class="text-sm font-bold text-[#0B192C]">Technical evidence</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">Relevant skill depth and the specific production problems they have solved.</p>
+          </div>
+
+          <div class="space-y-2">
+            <span class="text-xs font-serif font-bold text-[#0284C7] block">02 CONTEXT</span>
+            <h4 class="text-sm font-bold text-[#0B192C]">Business fit</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">Domain context, ownership level, and stakeholder communication maturity.</p>
+          </div>
+
+          <div class="space-y-2">
+            <span class="text-xs font-serif font-bold text-[#0284C7] block">03 ALIGNMENT</span>
+            <h4 class="text-sm font-bold text-[#0B192C]">Practical alignment</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">Location, hybrid model, compensation parity, and verified notice period.</p>
+          </div>
+
+          <div class="space-y-2">
+            <span class="text-xs font-serif font-bold text-[#0284C7] block">04 RISK</span>
+            <h4 class="text-sm font-bold text-[#0B192C]">Intent & risk</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">Motivation, counteroffer sensitivity, and authentic joining confidence.</p>
+          </div>
+
+          <div class="space-y-2">
+            <span class="text-xs font-serif font-bold text-[#0284C7] block">05 TRUST</span>
+            <h4 class="text-sm font-bold text-[#0B192C]">Verification</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">Direct references and background checks agreed per client protocol.</p>
+          </div>
+        </div>
+
+        <div class="pb-12 text-center text-xs text-slate-500 font-mono">
+          Candidate summary standard: <strong class="text-[#0B192C]">fit • evidence • constraints • risk • next step</strong>
+        </div>
+
+        <!-- Part B: Delivery Governance & Scorecard -->
+        <div class="pt-10 border-t border-[#E2E8F0]">
+          <div class="max-w-3xl mb-10">
+            <span class="eyebrow-tag mb-2">DELIVERY GOVERNANCE</span>
+            <h3 class="text-2xl sm:text-4xl font-serif text-[#0B192C] tracking-tight mb-2">
+              Visibility every week. Accountability at every stage.
+            </h3>
+            <p class="text-xs sm:text-sm text-[#475569]">
+              Your team should always know what is moving, what is stuck, and who owns the next action.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            
+            <!-- Publication Table -->
+            <div class="lg:col-span-8 bg-white border border-[#E2E8F0] rounded-lg p-6 shadow-sm">
+              <div class="flex items-center justify-between pb-4 border-b border-[#E2E8F0] mb-3">
+                <h4 class="text-sm font-bold text-[#0B192C]">Illustrative Hiring Review Scorecard</h4>
+                <div class="flex items-center gap-2 p-1 bg-slate-100 rounded text-xs font-semibold">
+                  <button type="button" class="scorecard-tab-btn px-3 py-1 rounded bg-slate-900 text-white" data-view="weekly">Weekly</button>
+                  <button type="button" class="scorecard-tab-btn px-3 py-1 rounded bg-white text-slate-700" data-view="monthly">Monthly</button>
+                </div>
+              </div>
+
+              <div id="scorecard-weekly-view" class="table-responsive-wrapper">
+                <table class="w-full text-left text-xs min-w-[460px]">
+                  <thead>
+                    <tr class="border-b border-[#E2E8F0] text-slate-400 uppercase font-semibold">
+                      <th class="py-2.5 px-3">What We Track</th>
+                      <th class="py-2.5 px-3">What It Tells You</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-[#E2E8F0] text-slate-700">
+                    <tr><td class="py-3 px-3 font-bold text-[#0B192C]">Role age & priority</td><td class="py-3 px-3">What needs attention first; aging vacancies flagged early.</td></tr>
+                    <tr><td class="py-3 px-3 font-bold text-[#0B192C]">Sourced → qualified</td><td class="py-3 px-3">Whether the market response is healthy and talent pools are reacting.</td></tr>
+                    <tr><td class="py-3 px-3 font-bold text-[#0B192C]">Interview conversion</td><td class="py-3 px-3">Whether the brief is calibrated accurately against expectations.</td></tr>
+                    <tr><td class="py-3 px-3 font-bold text-[#0B192C]">Offers & acceptance risk</td><td class="py-3 px-3">What may threaten the joining plan: compensation counteroffers, notice.</td></tr>
+                    <tr><td class="py-3 px-3 font-bold text-[#0B192C]">Action owners & dates</td><td class="py-3 px-3">What will change before the next review, backed by named accountability.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div id="scorecard-monthly-view" class="hidden table-responsive-wrapper">
+                <table class="w-full text-left text-xs min-w-[460px]">
+                  <thead>
+                    <tr class="border-b border-[#E2E8F0] text-slate-400 uppercase font-semibold">
+                      <th class="py-2.5 px-3">Monthly Executive Dimension</th>
+                      <th class="py-2.5 px-3">Strategic Insight & Corrective Action</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-[#E2E8F0] text-slate-700">
+                    <tr><td class="py-3 px-3 font-bold text-[#0B192C]">Stage-to-stage conversion</td><td class="py-3 px-3">Funnel yield analysis identifying calibration gaps between technical bars.</td></tr>
+                    <tr><td class="py-3 px-3 font-bold text-[#0B192C]">Offer-to-join velocity</td><td class="py-3 px-3">Notice period drop-off audit and counteroffer vulnerability index.</td></tr>
+                    <tr><td class="py-3 px-3 font-bold text-[#0B192C]">Compensation variance</td><td class="py-3 px-3">Live peer GCC compensation drift against budgeted market bandings.</td></tr>
+                    <tr><td class="py-3 px-3 font-bold text-[#0B192C]">90-day retention & quality</td><td class="py-3 px-3">Post-joining performance validation against initial mandate charters.</td></tr>
+                    <tr><td class="py-3 px-3 font-bold text-[#0B192C]">Quarterly capacity forecast</td><td class="py-3 px-3">Proactive pipelining for upcoming project squads and expansion waves.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Review Cadences -->
+            <div class="lg:col-span-4 space-y-6 pt-2">
+              <div class="space-y-1">
+                <span class="eyebrow-tag">WEEKLY DELIVERY</span>
+                <h4 class="text-base font-bold text-[#0B192C]">Pipeline review + bottleneck resolution</h4>
+                <p class="text-xs text-[#475569] leading-relaxed">Weekly high-impact check-in to clear feedback roadblocks and keep pipelines moving.</p>
+              </div>
+
+              <div class="space-y-1 pt-4 border-t border-[#E2E8F0]">
+                <span class="eyebrow-tag">MONTHLY BUSINESS</span>
+                <h4 class="text-base font-bold text-[#0B192C]">Conversion, market signals + corrective decisions</h4>
+                <p class="text-xs text-[#475569] leading-relaxed">Strategic executive review of talent density, compensation drift, and capacity scaling.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <div class="hairline-divider"></div>
+
+    <!-- ========================================================================
+         11. 90-DAY PILOT
+         Introduce the proposed engagement framework with clean timeline.
+         ======================================================================== -->
+    <section id="pilot" class="corp-section bg-[#FFFFFF]">
+      <div class="site-container">
+        
+        <div class="max-w-3xl mb-12">
+          <span class="eyebrow-tag mb-2">A PRACTICAL START</span>
+          <h2 class="text-3xl sm:text-5xl font-serif text-[#0B192C] tracking-tight mb-4 leading-tight">
+            Proposed 90-day pilot: prove the model on real mandates.
+          </h2>
+          <p class="text-base sm:text-lg text-[#334155] leading-relaxed">
+            Begin with a focused hiring problem, an agreed scorecard, and a review rhythm your team can trust. Test our execution before expanding into broader commitments.
+          </p>
+        </div>
+
+        <!-- Four Phase Horizontal Stepper with Clean Hairline Tabs -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+          <button type="button" class="pilot-step-btn text-left p-6 bg-white border-2 border-slate-900 rounded-lg shadow-sm" data-step="0">
+            <span class="eyebrow-tag mb-1">01 // ALIGN</span>
+            <h4 class="text-lg font-serif font-bold text-[#0B192C]">Days 1–10</h4>
+            <p class="text-xs text-[#475569] mt-1">Select priority roles; calibrate skills, compensation, outcomes and trade-offs.</p>
+          </button>
+
+          <button type="button" class="pilot-step-btn text-left p-6 bg-[#FBFBFA] border border-[#E2E8F0] rounded-lg hover:bg-white" data-step="1">
+            <span class="eyebrow-tag mb-1">02 // ACTIVATE</span>
+            <h4 class="text-lg font-serif font-bold text-[#0B192C]">Days 11–30</h4>
+            <p class="text-xs text-[#475569] mt-1">Map the relevant talent pools; begin targeted outreach and shortlist calibration.</p>
+          </button>
+
+          <button type="button" class="pilot-step-btn text-left p-6 bg-[#FBFBFA] border border-[#E2E8F0] rounded-lg hover:bg-white" data-step="2">
+            <span class="eyebrow-tag mb-1">03 // CONVERT</span>
+            <h4 class="text-lg font-serif font-bold text-[#0B192C]">Days 31–60</h4>
+            <p class="text-xs text-[#475569] mt-1">Run interviews, feedback, offer orchestration and risk management.</p>
+          </button>
+
+          <button type="button" class="pilot-step-btn text-left p-6 bg-[#FBFBFA] border border-[#E2E8F0] rounded-lg hover:bg-white" data-step="3">
+            <span class="eyebrow-tag mb-1">04 // OPTIMISE</span>
+            <h4 class="text-lg font-serif font-bold text-[#0B192C]">Days 61–90</h4>
+            <p class="text-xs text-[#475569] mt-1">Review conversions, refine sourcing and decide where to scale.</p>
+          </button>
+        </div>
+
+        <div id="pilot-detail-container" class="p-8 bg-[#FBFBFA] border border-[#E2E8F0] rounded-lg mb-6">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+              <div>
+                <span class="eyebrow-tag">PHASE 01 // ALIGN</span>
+                <h4 class="text-xl font-serif text-slate-900 mt-1">Days 1–10: Discovery & Mandate Calibration</h4>
+              </div>
+              <span class="text-xs font-semibold text-slate-500 uppercase">Pilot Milestone</span>
+            </div>
+            <p class="text-sm text-slate-700 leading-relaxed">
+              Select priority roles; calibrate skills, compensation, outcomes and trade-offs. We sit directly with the hiring manager to define what makes a candidate successful in the role.
+            </p>
+            <div class="pt-2">
+              <span class="text-xs font-bold text-slate-900 uppercase tracking-wider block mb-2">Agreed Deliverables</span>
+              <ul class="space-y-1.5 text-xs text-slate-700">
+                <li class="flex items-center gap-2">✓ Role Outcome Charter defining specific architectural problems the hire must solve</li>
+                <li class="flex items-center gap-2">✓ Real-time compensation banding and peer market benchmark audit</li>
+                <li class="flex items-center gap-2">✓ Calibration profile sign-off with hiring managers and HR stakeholders</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 p-5 bg-[#F5F5F2] rounded text-xs text-slate-500">
+          <p>Illustrative framework only. Role mix, milestones and delivery SLAs to be mutually agreed.</p>
+          <button type="button" class="btn-corp-secondary open-briefing-modal text-xs py-2 px-4 shrink-0">
+            Request Pilot Discussion
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="hairline-divider"></div>
+
+    <!-- ========================================================================
+         12. WHY KAEVI
+         Five partnership differentiators. Open minimal list.
+         ======================================================================== -->
+    <section class="corp-section bg-[#FBFBFA]">
+      <div class="site-container">
+        
+        <div class="max-w-3xl mb-12">
+          <span class="eyebrow-tag mb-2">WHY KAEVI</span>
+          <h2 class="text-3xl sm:text-5xl font-serif text-[#0B192C] tracking-tight mb-4 leading-tight">
+            We are deliberate about what makes a partnership work.
+          </h2>
+          <p class="text-base sm:text-lg text-[#334155] leading-relaxed">
+            No inflated promises. No opaque funnels. The model is built to be evaluated in the work itself.
+          </p>
+        </div>
+
+        <!-- Open Differentiator Rows -->
+        <div class="divide-y divide-[#E2E8F0] border-y border-[#E2E8F0] max-w-4xl">
+          
+          <div class="py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex items-center gap-4">
+              <span class="text-xs font-serif font-bold text-[#0284C7]">01</span>
+              <h4 class="text-base font-bold text-[#0B192C]">Founder-level attention</h4>
+            </div>
+            <p class="text-xs sm:text-sm text-[#475569] sm:text-right">A visible decision-maker when priorities change or issues escalate.</p>
+          </div>
+
+          <div class="py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex items-center gap-4">
+              <span class="text-xs font-serif font-bold text-[#0284C7]">02</span>
+              <h4 class="text-base font-bold text-[#0B192C]">GCC-specific discovery</h4>
+            </div>
+            <p class="text-xs sm:text-sm text-[#475569] sm:text-right">Role outcomes, team context and domain signals, not keyword matching alone.</p>
+          </div>
+
+          <div class="py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex items-center gap-4">
+              <span class="text-xs font-serif font-bold text-[#0284C7]">03</span>
+              <h4 class="text-base font-bold text-[#0B192C]">Quality of slate over volume</h4>
+            </div>
+            <p class="text-xs sm:text-sm text-[#475569] sm:text-right">An explained shortlist and a clear reason for every recommendation.</p>
+          </div>
+
+          <div class="py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex items-center gap-4">
+              <span class="text-xs font-serif font-bold text-[#0284C7]">04</span>
+              <h4 class="text-base font-bold text-[#0B192C]">Flexible delivery shape</h4>
+            </div>
+            <p class="text-xs sm:text-sm text-[#475569] sm:text-right">Individual searches, contract skill needs or embedded programs.</p>
+          </div>
+
+          <div class="py-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex items-center gap-4">
+              <span class="text-xs font-serif font-bold text-[#0284C7]">05</span>
+              <h4 class="text-base font-bold text-[#0B192C]">Transparent governance</h4>
+            </div>
+            <p class="text-xs sm:text-sm text-[#475569] sm:text-right">Shared scorecards, regular reviews and action ownership.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <div class="hairline-divider"></div>
+
+    <!-- ========================================================================
+         13. FINAL CTA
+         Confident, memorable executive invitation with atmospheric ambient motion.
+         ======================================================================== -->
+    <section id="final-cta" class="corp-section bg-[#0B192C] text-white py-24 sm:py-32 relative overflow-hidden">
+      <!-- Atmospheric Ambient Glow -->
+      <div class="cta-ambient-glow"></div>
+
+      <div class="site-container text-center relative z-10">
+        <div class="max-w-3xl mx-auto space-y-6">
+          
+          <span class="text-xs font-mono font-bold tracking-widest text-[#38BDF8] uppercase">EXECUTIVE MANDATE INVITATION</span>
+          
+          <h2 class="text-4xl sm:text-6xl font-serif text-white leading-tight">
+            Bring us the roles <br>
+            <em class="italic text-[#38BDF8]">you cannot afford to keep open.</em>
+          </h2>
+          
+          <p class="text-base sm:text-lg text-slate-300 max-w-xl mx-auto leading-relaxed">
+            Whether launching a new function, scaling engineering squads, or transforming your center’s skill mix, test KAEVI on your highest-friction vacancy.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 pt-4 max-w-md mx-auto sm:max-w-none">
+            <button type="button" class="btn-corp-primary open-briefing-modal bg-[#0284C7] border-[#0284C7] hover:bg-[#0369A1] text-base px-8 py-3.5 w-full sm:w-auto">
+              <span>Calibrate a Mandate</span>
+              <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <a href="https://kaevi.net" target="_blank" rel="noopener noreferrer" class="btn-corp-secondary bg-transparent border-slate-600 text-white hover:bg-slate-800 text-base px-8 py-3.5 w-full sm:w-auto justify-center">
+              <span>Visit kaevi.net</span>
+            </a>
+          </div>
+
+          <div class="pt-8 text-xs font-mono text-slate-400">
+            Connecting Talent. Enabling Growth.
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       14. FOOTER
+       Contact details, navigation, and brand statement.
+       ======================================================================== -->
+  <footer class="bg-[#06111F] text-slate-400 py-14 border-t border-slate-800 text-xs">
+    <div class="site-container">
+      
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pb-8 border-b border-slate-800">
+        <img src="assets/logo-white.svg" alt="KAEVI" class="h-7 w-auto">
+        <div class="flex items-center gap-6 text-[11px] font-mono text-slate-400">
+          <span>https://kaevi.net</span>
+          <span>•</span>
+          <span>GCC Workforce Advisory</span>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500 font-mono">
+        <div>© 2026 KAEVI Global Workforce Partners. All rights reserved.</div>
+        <div class="flex items-center gap-6">
+          <button type="button" class="open-legal-modal hover:text-slate-300 transition-colors" data-legal="privacy">Privacy Protocol</button>
+          <button type="button" class="open-legal-modal hover:text-slate-300 transition-colors" data-legal="terms">Terms of Engagement</button>
+          <a href="https://kaevi.net" target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 transition-colors">kaevi.net</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- BRIEFING MODAL -->
+  <div id="briefing-modal" class="corp-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-head">
+    <div class="corp-modal-container p-6 sm:p-8">
+      <button type="button" class="close-briefing-modal absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-800 transition-colors" aria-label="Close modal">✕</button>
+      
+      <!-- Panel 1: Intake Form -->
+      <div id="briefing-form-panel">
+        <span class="eyebrow-tag mb-1">EXECUTIVE BRIEFING</span>
+        <h3 id="modal-head" class="text-xl sm:text-2xl font-serif text-[#0B192C]">Calibrate an Executive Mandate</h3>
+        <p class="text-xs text-slate-500 mb-5">Connect directly with KAEVI practice leadership to discuss capability requirements.</p>
+
+        <form id="executive-briefing-form" class="space-y-4 text-xs" novalidate>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            <div>
+              <label for="briefing-name" class="block font-semibold text-slate-700 uppercase tracking-wider mb-1 text-[11px]">Your Full Name *</label>
+              <input type="text" id="briefing-name" name="fullName" required placeholder="e.g. Arun Sharma" class="w-full px-3 py-2.5 rounded border border-slate-300 bg-[#FBFBFA] focus:border-[#0284C7] focus:bg-white text-slate-800">
+              <span id="error-name" class="text-red-600 text-[11px] hidden mt-1">Please enter your full name.</span>
+            </div>
+            <div>
+              <label for="briefing-email" class="block font-semibold text-slate-700 uppercase tracking-wider mb-1 text-[11px]">Corporate Email *</label>
+              <input type="email" id="briefing-email" name="corporateEmail" required placeholder="corporate@enterprise.com" class="w-full px-3 py-2.5 rounded border border-slate-300 bg-[#FBFBFA] focus:border-[#0284C7] focus:bg-white text-slate-800">
+              <span id="error-email" class="text-red-600 text-[11px] hidden mt-1">Please enter a valid corporate email.</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            <div>
+              <label for="briefing-enterprise" class="block font-semibold text-slate-700 uppercase tracking-wider mb-1 text-[11px]">Enterprise / GCC Entity *</label>
+              <input type="text" id="briefing-enterprise" name="enterpriseName" required placeholder="e.g. Global Tech GCC India" class="w-full px-3 py-2.5 rounded border border-slate-300 bg-[#FBFBFA] focus:border-[#0284C7] focus:bg-white text-slate-800">
+              <span id="error-enterprise" class="text-red-600 text-[11px] hidden mt-1">Please specify your organization or center.</span>
+            </div>
+            <div>
+              <label for="briefing-stage" class="block font-semibold text-slate-700 uppercase tracking-wider mb-1 text-[11px]">Lifecycle Moment *</label>
+              <select id="briefing-stage" name="lifecycleStage" required class="w-full px-3 py-2.5 rounded border border-slate-300 bg-[#FBFBFA] focus:border-[#0284C7] focus:bg-white text-slate-800">
+                <option value="Establish">01. Establish (Launch new function / founding team)</option>
+                <option value="Expand">02. Expand (Scale capability / sprint pods)</option>
+                <option value="Transform">03. Transform (Change skill mix / AI & modernize)</option>
+                <option value="Sustain">04. Sustain (Evergreen pipelines / continuous backfills)</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="briefing-practice" class="block font-semibold text-slate-700 uppercase tracking-wider mb-1 text-[11px]">Primary Talent Practice *</label>
+            <select id="briefing-practice" name="practiceArea" required class="w-full px-3 py-2.5 rounded border border-slate-300 bg-[#FBFBFA] focus:border-[#0284C7] focus:bg-white text-slate-800">
+              <option value="AI, Data & Analytics">AI, Data & Analytics (PyTorch, LLM, Snowflake)</option>
+              <option value="Product & Engineering">Product & Engineering (Distributed Backend, Full-Stack, SDET)</option>
+              <option value="Cloud & Platform">Cloud & Platform (Kubernetes, AWS/Azure, 24/7 SRE)</option>
+              <option value="Cybersecurity & Risk">Cybersecurity & Risk (Zero Trust, AppSec, GRC, SOC)</option>
+              <option value="Enterprise Applications">Enterprise Applications (SAP S/4HANA, Salesforce)</option>
+              <option value="Business & Operations">Business & Operations (Global FP&A, Procurement, Shared Services)</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="briefing-notes" class="block font-semibold text-slate-700 uppercase tracking-wider mb-1 text-[11px]">Mandate Context or Specific Role Targets (Optional)</label>
+            <textarea id="briefing-notes" name="mandateNotes" rows="2" placeholder="e.g., Founding Director of Engineering + 3 Staff SREs needed for Q2 expansion" class="w-full px-3 py-2 rounded border border-slate-300 bg-[#FBFBFA] focus:border-[#0284C7] focus:bg-white text-slate-800"></textarea>
+          </div>
+
+          <!-- Privacy & Consent Checkbox -->
+          <div class="pt-1 border-t border-slate-100">
+            <label class="flex items-start gap-2.5 cursor-pointer text-[11px] text-slate-600 leading-normal">
+              <input type="checkbox" id="briefing-consent" name="consent" required class="mt-0.5 rounded border-slate-300 text-[#0284C7] focus:ring-[#0284C7]">
+              <span>I consent to KAEVI processing this mandate briefing. Mandate discussions are held under strict confidentiality with senior practice principals.</span>
+            </label>
+            <span id="error-consent" class="text-red-600 text-[11px] hidden mt-1">Please accept the confidentiality consent to proceed.</span>
+          </div>
+
+          <button id="briefing-submit-btn" type="submit" class="w-full btn-corp-primary py-3.5 text-sm justify-center mt-3">
+            <span>Transmit Mandate Inquiry</span>
+            <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </form>
+      </div>
+
+      <!-- Panel 2: Genuine Verified Success State -->
+      <div id="briefing-success-panel" class="hidden text-center py-6 space-y-4">
+        <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center mx-auto border border-emerald-200">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <span class="eyebrow-tag text-emerald-700">SUBMISSION CONFIRMED</span>
+        <h4 class="text-2xl font-serif text-[#0B192C]">Mandate Inquiry Dispatched</h4>
+        <p class="text-xs text-slate-600 max-w-md mx-auto leading-relaxed">
+          Your briefing packet has been received by KAEVI Practice Leadership. A designated Practice Principal will contact you within 24 business hours to coordinate mandate calibration.
+        </p>
+        <div class="p-3 bg-slate-50 border border-slate-200 rounded text-slate-600 font-mono text-[11px] max-w-sm mx-auto">
+          Reference: <span id="success-ref-id" class="font-bold text-[#0B192C]">KV-2026-MANDATE</span>
+        </div>
+        <div class="pt-2">
+          <button type="button" class="btn-corp-secondary close-briefing-modal text-xs py-2 px-6">Close</button>
+        </div>
+      </div>
+
+      <!-- Panel 3: Error & Email Fallback State -->
+      <div id="briefing-error-panel" class="hidden text-center py-6 space-y-4">
+        <div class="w-12 h-12 bg-amber-50 text-amber-700 rounded-full flex items-center justify-center mx-auto border border-amber-200">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <span class="eyebrow-tag text-amber-800">TRANSMISSION NOTICE</span>
+        <h4 class="text-xl font-serif text-[#0B192C]">Direct Dispatch Channel Unavailable</h4>
+        <p class="text-xs text-slate-600 max-w-md mx-auto leading-relaxed">
+          Our direct automated dispatch channel is currently unreachable from this environment. Your entered briefing details have been preserved. You can transmit this inquiry directly to KAEVI Leadership via corporate email:
+        </p>
+        
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+          <a id="briefing-mailto-fallback" href="mailto:briefings@kaevi.net" class="btn-corp-primary text-xs py-2.5 px-4 bg-[#0284C7] border-[#0284C7] hover:bg-[#0369A1]">
+            <span>Transmit via Email to briefings@kaevi.net</span>
+            <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <button id="briefing-retry-btn" type="button" class="btn-corp-secondary text-xs py-2.5 px-4">
+            <span>Review & Retry</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- LEGAL & COMPLIANCE MODAL -->
+  <div id="legal-modal" class="corp-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="legal-head">
+    <div class="corp-modal-container p-6 sm:p-8">
+      <button type="button" class="close-legal-modal absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-800 transition-colors" aria-label="Close modal">✕</button>
+      
+      <span class="eyebrow-tag mb-1">GOVERNANCE & COMPLIANCE</span>
+      <h3 id="legal-head" class="text-xl sm:text-2xl font-serif text-[#0B192C] mb-4">Enterprise Governance Protocols</h3>
+
+      <div class="space-y-4 text-xs text-slate-600 leading-relaxed border-t border-slate-200 pt-4 max-h-[60vh] overflow-y-auto pr-2">
+        <div class="space-y-1.5">
+          <h4 class="text-sm font-bold text-[#0B192C]">1. Data Privacy & Confidentiality</h4>
+          <p>
+            KAEVI Global Workforce Partners operates in full compliance with applicable Indian information technology and personal data protection regulations, including the Digital Personal Data Protection Act (DPDPA 2023), alongside global client standards.
+          </p>
+          <p>
+            Candidate profiles, executive search calibration criteria, and organizational structures are treated with strict confidentiality. No candidate profile is presented without candidate permission, and no client organizational details are shared beyond screened practitioners.
+          </p>
+        </div>
+
+        <div class="space-y-1.5 pt-3 border-t border-slate-100">
+          <h4 class="text-sm font-bold text-[#0B192C]">2. Terms of Engagement</h4>
+          <p>
+            Client advisory, executive search mandates, contract IT staffing, and RPO engagements are governed by mutually executed Master Services Agreements (MSAs), Statements of Work (SOWs), and candidate placement schedules.
+          </p>
+          <p>
+            All delivery milestones, commercial fees, exclusivity parameters, and warranty replacement terms are specified formally within individual client engagement documentation.
+          </p>
+        </div>
+
+        <div class="space-y-1.5 pt-3 border-t border-slate-100">
+          <h4 class="text-sm font-bold text-[#0B192C]">3. Compliance Contact</h4>
+          <p>
+            For enterprise vendor empanelment, formal MSA documentation, or data protection inquiries, contact our governance team directly at:
+          </p>
+          <p class="font-mono text-slate-800">
+            <a href="mailto:compliance@kaevi.net" class="text-[#0284C7] hover:underline font-semibold">compliance@kaevi.net</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="pt-6 border-t border-slate-200 mt-4 flex justify-end">
+        <button type="button" class="btn-corp-secondary close-legal-modal text-xs py-2 px-5">Close</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

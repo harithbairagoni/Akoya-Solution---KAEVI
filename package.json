@@ -1,0 +1,13 @@
+{
+  "name": "kaevi-solutions-web",
+  "version": "1.0.0",
+  "description": "KAEVI Solutions - GCC-Focused Global Workforce Platform",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "python3 -m http.server 3000"
+  },
+  "keywords": ["kaevi", "gcc", "workforce", "talent", "staffing"],
+  "author": "KAEVI Solutions",
+  "license": "ISC"
+}
