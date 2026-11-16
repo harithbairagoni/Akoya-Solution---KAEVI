@@ -727,104 +727,199 @@ function initHybridMotionSystem() {
       .fromTo('.hero-paragraph', { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7 }, '-=0.55')
       .fromTo('.hero-actions', { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55 }, '-=0.4')
       .fromTo('.hero-taxonomy', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.6 }, '-=0.3')
+      .fromTo('.hero-glass-plinth', { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.85 }, '-=0.7')
       .add(() => {
         const curtain = document.getElementById('hero-curtain-mask');
         if (curtain) curtain.classList.add('revealed');
-      }, '-=0.85');
+      }, '-=0.6');
 
-    // Apple-Style Spatial Hero Dimensional Depth Scroll (Desktop)
-    if (window.innerWidth >= 1024) {
-      const heroSection = document.getElementById('hero');
-      if (heroSection) {
-        gsap.timeline({
-          scrollTrigger: {
-            trigger: heroSection,
-            start: 'top top',
-            end: 'bottom bottom',
-            scrub: 1.2,
-            invalidateOnRefresh: true
-          }
-        })
-        .to('.hero-bg-img', { scale: 1.15, y: -40, ease: 'none' }, 0)
-        .to('.hero-plane-1-type', { y: -50, scale: 0.88, opacity: 0.35, ease: 'power1.out' }, 0)
-        .to('.hero-glass-plinth', { y: -25, scale: 1.03, boxShadow: '0 32px 70px -10px rgba(11,25,44,0.22)', ease: 'none' }, 0)
-        .to('.hero-foreground-content', { y: -80, opacity: 0.9, ease: 'none' }, 0);
-      }
-    }
-
-    // Signature Move: 3D Exploded Capability Engine (Apple Hardware Teardown)
+    // Interactive GCC Capability Architecture Console
     const engineSection = document.getElementById('capability-engine');
     if (engineSection) {
-      const slices = [
-        document.querySelector('.engine-layer-slice.slice-1'),
-        document.querySelector('.engine-layer-slice.slice-2'),
-        document.querySelector('.engine-layer-slice.slice-3'),
-        document.querySelector('.engine-layer-slice.slice-4')
-      ];
-      const calloutCards = Array.from(document.querySelectorAll('.engine-callout-card'));
+      const capabilityData = {
+        4: {
+          tag: 'LAYER 04 // GOVERNANCE & RISK SHIELD',
+          title: 'Named Single Accountability',
+          badge: '24h SLA Active',
+          badgeClass: 'bg-emerald-950/60 border-emerald-500/40 text-emerald-400',
+          desc: 'Direct partner responsibility for offer-to-join retention, notice period tracking, and counteroffer hedging. We actively engage candidates through 60–90 day notice periods with structured technical touchpoints, ensuring zero unhedged drop-offs on critical mandates.',
+          m1: { label: 'Governance', val: 'Named Partner', sub: 'Single point of contact' },
+          m2: { label: 'SLA Cadence', val: '24h Feedback', sub: 'Loop enforcement', valClass: 'text-[#38BDF8]' },
+          m3: { label: 'Retention', val: '100% Tracked', sub: 'Offer to Day-1 join', valClass: 'text-emerald-400' },
+          deliverables: [
+            'Weekly structured pipeline scorecard with aging and bottleneck flags',
+            'Notice period vulnerability audit and proactive counteroffer shielding',
+            'Executive monthly governance review with talent density & compensation benchmarking'
+          ]
+        },
+        3: {
+          tag: 'LAYER 03 // DELIVERY POD EXECUTION',
+          title: 'Domain-Dedicated Sourcing Lanes',
+          badge: 'High Velocity Pods',
+          badgeClass: 'bg-sky-950/60 border-sky-500/40 text-sky-400',
+          desc: 'Domain-dedicated sourcing squads operating in parallel engineering sprints. Rather than single recruiters juggling unrelated roles, KAEVI deploys specialist benches dedicated to AI/ML, Cloud Platform SRE, and Distributed Systems.',
+          m1: { label: 'Shortlist SLA', val: '10–12 Days', sub: 'From mandate sign-off' },
+          m2: { label: 'Pod Depth', val: 'Dedicated Squads', sub: 'Domain-specialized sourcing', valClass: 'text-[#38BDF8]' },
+          m3: { label: 'Bench Readiness', val: 'Pre-Calibrated', sub: 'Vetted candidate pools', valClass: 'text-emerald-400' },
+          deliverables: [
+            'Sprint-based delivery capacity that flexes for sudden project spikes',
+            'Parallel interview scheduling and candidate prep before client rounds',
+            'Active market benchmarking against competing tech GCC offers'
+          ]
+        },
+        2: {
+          tag: 'LAYER 02 // CALIBRATION CORE',
+          title: 'Role Outcome Charter & Diagnostic',
+          badge: 'Zero Resume Dumping',
+          badgeClass: 'bg-amber-950/60 border-amber-500/40 text-amber-400',
+          desc: 'Deep discovery and role outcome calibration conducted before any outreach begins. We define the concrete technical problems, team architecture, and cultural expectations the candidate must solve, eliminating unqualified CV volume.',
+          m1: { label: 'Accuracy', val: '92% Interview', sub: 'Conversion to shortlist' },
+          m2: { label: 'Vetting Standard', val: '5-Point Lens', sub: 'Evidence, fit, parity, risk', valClass: 'text-[#38BDF8]' },
+          m3: { label: 'Brief Calibration', val: 'Direct Intake', sub: 'With hiring manager', valClass: 'text-emerald-400' },
+          deliverables: [
+            'Role Outcome Charter agreeing on specific technical benchmarks',
+            'Compensation parity check against real-time GCC market percentiles',
+            'Comprehensive candidate profile explaining evidence and constraints'
+          ]
+        },
+        1: {
+          tag: 'LAYER 01 // ECOSYSTEM RADAR',
+          title: 'Live Market Telemetry & Mapping',
+          badge: '2,117 GCC Map',
+          badgeClass: 'bg-indigo-950/60 border-indigo-500/40 text-indigo-400',
+          desc: 'Real-time market intelligence across 2,117 GCCs and 2.36M professionals in India. We track organizational movements, tech stack migrations, compensation bands, and diaspora returnees across Bengaluru, Hyderabad, Pune, NCR, and Chennai.',
+          m1: { label: 'Ecosystem Scale', val: '2,117 GCCs', sub: 'Monitored across India' },
+          m2: { label: 'Talent Universe', val: '2.36M Pool', sub: 'Engineering & leadership', valClass: 'text-[#38BDF8]' },
+          m3: { label: 'Hub Reach', val: '5 Tech Hubs', sub: 'Tier-1 & emerging centers', valClass: 'text-emerald-400' },
+          deliverables: [
+            'Continuous talent density mapping for scarce engineering capabilities',
+            'Competitor talent movement and notice period pattern analytics',
+            'Cross-border and diaspora executive search intelligence'
+          ]
+        }
+      };
 
-      function highlightEngineLayer(activeNum) {
-        slices.forEach(s => {
-          if (!s) return;
-          const num = parseInt(s.getAttribute('data-slice'), 10);
-          if (num === activeNum) {
-            s.classList.add('active');
+      const layerTabs = Array.from(document.querySelectorAll('.engine-layer-card'));
+      const dossierEl = document.getElementById('engine-dossier');
+      const tagEl = document.getElementById('dossier-layer-tag');
+      const titleEl = document.getElementById('dossier-title');
+      const badgeEl = document.getElementById('dossier-sla-badge');
+      const descEl = document.getElementById('dossier-description');
+      
+      const m1Label = document.getElementById('dossier-metric-label-1');
+      const m1Val = document.getElementById('dossier-metric-val-1');
+      const m1Sub = document.getElementById('dossier-metric-sub-1');
+
+      const m2Label = document.getElementById('dossier-metric-label-2');
+      const m2Val = document.getElementById('dossier-metric-val-2');
+      const m2Sub = document.getElementById('dossier-metric-sub-2');
+
+      const m3Label = document.getElementById('dossier-metric-label-3');
+      const m3Val = document.getElementById('dossier-metric-val-3');
+      const m3Sub = document.getElementById('dossier-metric-sub-3');
+
+      const deliverablesEl = document.getElementById('dossier-deliverables');
+
+      function switchCapabilityLayer(layerNum) {
+        const data = capabilityData[layerNum];
+        if (!data) return;
+
+        layerTabs.forEach(tab => {
+          const num = parseInt(tab.getAttribute('data-layer'), 10);
+          if (num === layerNum) {
+            tab.classList.add('active');
+            tab.classList.remove('bg-white');
+            tab.classList.add('bg-[#F0F9FF]', 'border-[#0284C7]');
+            const dot = tab.querySelector('.rounded-full');
+            if (dot) {
+              dot.className = 'w-2.5 h-2.5 rounded-full bg-[#0284C7] ring-4 ring-[#0284C7]/20';
+            }
           } else {
-            s.classList.remove('active');
-          }
-        });
-
-        calloutCards.forEach(c => {
-          const num = parseInt(c.getAttribute('data-target-slice'), 10);
-          if (num === activeNum) {
-            c.classList.add('active');
-          } else {
-            c.classList.remove('active');
-          }
-        });
-      }
-
-      // Interactive Click on Callout Cards or Slices
-      calloutCards.forEach(card => {
-        card.addEventListener('click', () => {
-          const targetSlice = parseInt(card.getAttribute('data-target-slice'), 10);
-          highlightEngineLayer(targetSlice);
-        });
-      });
-
-      slices.forEach(slice => {
-        if (!slice) return;
-        slice.addEventListener('click', () => {
-          const num = parseInt(slice.getAttribute('data-slice'), 10);
-          highlightEngineLayer(num);
-        });
-      });
-
-      // Desktop Pinned 3D Exploded Scrubber
-      if (window.innerWidth >= 1024) {
-        const engineTl = gsap.timeline({
-          scrollTrigger: {
-            trigger: engineSection,
-            start: 'top top',
-            end: 'bottom bottom',
-            scrub: 1,
-            onUpdate: (self) => {
-              const p = self.progress;
-              if (p > 0.75) highlightEngineLayer(4);
-              else if (p > 0.5) highlightEngineLayer(3);
-              else if (p > 0.25) highlightEngineLayer(2);
-              else highlightEngineLayer(1);
+            tab.classList.remove('active', 'bg-[#F0F9FF]', 'border-[#0284C7]');
+            tab.classList.add('bg-white', 'border-[#E2E8F0]');
+            const dot = tab.querySelector('.rounded-full');
+            if (dot) {
+              dot.className = 'w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-[#0284C7] transition-colors';
             }
           }
         });
 
-        engineTl
-          .to('.engine-layer-slice.slice-4', { y: -135, z: 90, rotateX: 28, ease: 'power1.out' }, 0)
-          .to('.engine-layer-slice.slice-3', { y: -45, z: 35, ease: 'power1.out' }, 0)
-          .to('.engine-layer-slice.slice-2', { y: 45, z: -25, ease: 'power1.out' }, 0)
-          .to('.engine-layer-slice.slice-1', { y: 135, z: -85, rotateX: 20, ease: 'power1.out' }, 0)
-          .to('#engine-assembly', { rotateY: -14, ease: 'none' }, 0);
+        if (dossierEl) {
+          gsap.to(dossierEl.children, {
+            opacity: 0,
+            y: 6,
+            duration: 0.15,
+            ease: 'power2.in',
+            onComplete: () => {
+              if (tagEl) tagEl.textContent = data.tag;
+              if (titleEl) titleEl.textContent = data.title;
+              if (badgeEl) {
+                badgeEl.className = `inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono shrink-0 ${data.badgeClass}`;
+                badgeEl.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-current animate-pulse"></span> ${data.badge}`;
+              }
+              if (descEl) descEl.textContent = data.desc;
+
+              if (m1Label) m1Label.textContent = data.m1.label;
+              if (m1Val) m1Val.textContent = data.m1.val;
+              if (m1Sub) m1Sub.textContent = data.m1.sub;
+
+              if (m2Label) m2Label.textContent = data.m2.label;
+              if (m2Val) {
+                m2Val.textContent = data.m2.val;
+                m2Val.className = `text-base sm:text-lg font-bold mt-0.5 block ${data.m2.valClass || 'text-white'}`;
+              }
+              if (m2Sub) m2Sub.textContent = data.m2.sub;
+
+              if (m3Label) m3Label.textContent = data.m3.label;
+              if (m3Val) {
+                m3Val.textContent = data.m3.val;
+                m3Val.className = `text-base sm:text-lg font-bold mt-0.5 block ${data.m3.valClass || 'text-white'}`;
+              }
+              if (m3Sub) m3Sub.textContent = data.m3.sub;
+
+              if (deliverablesEl) {
+                deliverablesEl.innerHTML = data.deliverables.map(item => `
+                  <li class="flex items-center gap-2">
+                    <span class="text-[#38BDF8]">✓</span>
+                    <span>${item}</span>
+                  </li>
+                `).join('');
+              }
+
+              gsap.to(dossierEl.children, {
+                opacity: 1,
+                y: 0,
+                duration: 0.25,
+                stagger: 0.04,
+                ease: 'power2.out'
+              });
+            }
+          });
+        }
       }
+
+      layerTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const num = parseInt(tab.getAttribute('data-layer'), 10);
+          switchCapabilityLayer(num);
+        });
+      });
+
+      ScrollTrigger.create({
+        trigger: engineSection,
+        start: 'top 75%',
+        once: true,
+        onEnter: () => {
+          gsap.fromTo('.engine-layer-card',
+            { y: 16, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.6, stagger: 0.08, ease: 'power2.out' }
+          );
+          gsap.fromTo('#engine-dossier',
+            { y: 20, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.7, ease: 'power2.out', delay: 0.15 }
+          );
+        }
+      });
     }
 
     // GCC Stats Smooth Count-Up (Accurate, exact static values, once: true)

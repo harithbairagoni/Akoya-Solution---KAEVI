@@ -118,43 +118,76 @@
 
   <main>
     <!-- ========================================================================
-         2. SPATIAL DIMENSIONAL HERO (Apple-Style 4-Layer Architecture)
-         Preserves headline, strong serif treatment, sophisticated editorial visual,
-         and communicates what, whom, why, action with genuine 3D perspective depth.
+         2. HERO SECTION — EDITORIAL LUXURY & ARCHITECTURAL PRECISION
+         Balanced two-column architecture inside site-container, zero coordinate collision.
          ======================================================================== -->
-    <section id="hero" class="spatial-hero-section relative">
-      <div class="spatial-hero-stage">
-        
-        <!-- Plane 0: Distant Skyline Horizon (Background) -->
-        <div class="hero-plane hero-plane-0-bg">
-          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=85" 
-               alt="Global Corporate Skyline" 
-               class="hero-bg-img" 
-               loading="eager">
-        </div>
+    <section id="hero" class="hero-section relative bg-[#FBFBFA] border-b border-[#E2E8F0]/60 overflow-hidden">
+      <!-- Ambient subtle background glow -->
+      <div class="hero-ambient-bg absolute inset-0 pointer-events-none" aria-hidden="true"></div>
 
-        <!-- Plane 1: Mid-Rear Typographic Plane (Recedes behind subject in 3D) -->
-        <div class="hero-plane hero-plane-1-type">
-          <div class="site-container w-full">
-            <div class="max-w-4xl space-y-4">
-              <div class="flex items-center gap-2">
+      <div class="site-container relative py-16 sm:py-20 lg:py-24">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          <!-- Left Column: Editorial Headline & Value Proposition -->
+          <div class="lg:col-span-7 space-y-6 sm:space-y-8">
+            
+            <div class="space-y-4">
+              <div class="flex items-center gap-2.5">
                 <span class="eyebrow-tag">GLOBAL WORKFORCE PARTNERS</span>
                 <span class="w-8 h-px bg-[#0284C7]/40"></span>
                 <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">GCC Executive Search & Staffing</span>
               </div>
-              <h1 class="spatial-headline font-serif font-normal text-[#0B192C] leading-[1.1] tracking-[-0.025em]">
+              
+              <h1 class="hero-headline font-serif font-normal text-[#0B192C] leading-[1.08] tracking-[-0.03em] text-4xl sm:text-5xl lg:text-[3.75rem]">
                 <span class="hero-line-mask"><span class="hero-line-inner hero-line-1 block">Talent for the</span></span>
                 <span class="hero-line-mask mt-1 sm:mt-2"><em class="hero-line-inner hero-line-2 block italic font-serif text-[#0B192C]">mandates that matter.</em></span>
               </h1>
             </div>
-          </div>
-        </div>
 
-        <!-- Plane 2: Focal Subject Plane (Glass Corporate Facade Plinth) -->
-        <div class="hero-plane hero-plane-2-subject">
-          <div class="site-container w-full flex justify-end">
-            <div class="hero-subject-card">
+            <!-- Value Proposition -->
+            <p class="hero-paragraph text-base sm:text-lg text-[#334155] leading-relaxed font-normal max-w-2xl">
+              KAEVI is a GCC-focused workforce partner helping Global Capability Centres and multinational enterprises hire critical technical and functional talent. We combine mandate-led discovery, specialist search and accountable delivery to build teams that support business priorities.
+            </p>
+
+            <!-- Actions: One dominant CTA + secondary link -->
+            <div class="hero-actions flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 pt-2">
+              <button type="button" class="btn-corp-primary open-briefing-modal text-base px-8 py-4 w-full sm:w-auto group">
+                <span>Schedule an Executive Briefing</span>
+                <svg class="w-4 h-4 text-white transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+
+              <a href="#operating-model" class="corp-text-link text-base justify-center sm:justify-start group">
+                <span>Explore Our Operating Model</span>
+                <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+
+            <!-- Core Services Taxonomy Strip -->
+            <div class="hero-taxonomy pt-6 border-t border-[#E2E8F0] flex flex-wrap items-center gap-x-3 gap-y-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
+              <span>IT Staffing</span>
+              <span class="text-slate-300">•</span>
+              <span>GCC Talent</span>
+              <span class="text-slate-300">•</span>
+              <span>Permanent Hiring</span>
+              <span class="text-slate-300">•</span>
+              <span>RPO</span>
+              <span class="text-slate-300">•</span>
+              <span>Workforce Solutions</span>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Elevated Architectural Glass Plinth & Telemetry Card -->
+          <div class="lg:col-span-5">
+            <div class="relative group pt-4">
+              <!-- Live Telemetry Pill floating above top-left of plinth -->
+              <div class="hero-telemetry-badge absolute -top-1 left-4 sm:left-6 z-20 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-[#E2E8F0] shadow-md text-xs font-mono text-slate-700">
+                <span class="w-2 h-2 rounded-full bg-[#0284C7] animate-pulse"></span>
+                <span>Active Mandates: <strong class="text-[#0B192C]">48 Sourced This Week</strong></span>
+              </div>
+
               <div class="hero-glass-plinth">
+                <!-- Framed Architectural Photography -->
                 <div class="hero-photo-frame">
                   <div class="curtain-mask" id="hero-curtain-mask"></div>
                   <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=85" 
@@ -162,6 +195,8 @@
                        loading="eager" 
                        class="hero-photo-img">
                 </div>
+
+                <!-- Plinth Footer Bar with Hub Indicator -->
                 <div class="p-3.5 bg-white/95 backdrop-blur-md border-t border-[#E2E8F0] flex items-center justify-between text-xs text-slate-600 font-mono">
                   <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> GCC Delivery Hub</span>
                   <span>Bengaluru • Hyderabad</span>
@@ -169,54 +204,8 @@
               </div>
             </div>
           </div>
+
         </div>
-
-        <!-- Plane 3: Foreground Telemetry Plane & Narrative Interaction -->
-        <div class="hero-plane hero-plane-3-foreground">
-          <div class="site-container w-full">
-            <div class="hero-foreground-content max-w-xl space-y-6">
-              
-              <!-- Floating Glass Telemetry Badge -->
-              <div class="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-[#E2E8F0] shadow-sm text-xs font-mono text-slate-700">
-                <span class="w-2 h-2 rounded-full bg-[#0284C7]"></span>
-                <span>Active Mandates: <strong>48 Sourced This Week</strong></span>
-              </div>
-
-              <!-- Direct Business Proposition answering What, Whom, and Why -->
-              <p class="hero-paragraph text-base sm:text-lg text-[#334155] leading-relaxed font-normal">
-                KAEVI is a GCC-focused workforce partner helping Global Capability Centres and multinational enterprises hire critical technical and functional talent. We combine mandate-led discovery, specialist search and accountable delivery to build teams that support business priorities.
-              </p>
-
-              <!-- Actions: One dominant CTA + secondary link -->
-              <div class="hero-actions flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 pt-2">
-                <button type="button" class="btn-corp-primary open-briefing-modal text-base px-8 py-4 w-full sm:w-auto group">
-                  <span>Schedule an Executive Briefing</span>
-                  <svg class="w-4 h-4 text-white transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </button>
-
-                <a href="#operating-model" class="corp-text-link text-base justify-center sm:justify-start group">
-                  <span>Explore Our Operating Model</span>
-                  <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </a>
-              </div>
-
-              <!-- Core Services Taxonomy Strip -->
-              <div class="hero-taxonomy pt-6 border-t border-[#E2E8F0] flex flex-wrap items-center gap-x-3 gap-y-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
-                <span>IT Staffing</span>
-                <span class="text-slate-300">•</span>
-                <span>GCC Talent</span>
-                <span class="text-slate-300">•</span>
-                <span>Permanent Hiring</span>
-                <span class="text-slate-300">•</span>
-                <span>RPO</span>
-                <span class="text-slate-300">•</span>
-                <span>Workforce Solutions</span>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
       </div>
     </section>
 
@@ -490,7 +479,7 @@
         <div class="divide-y divide-[#E2E8F0] border-y border-[#E2E8F0]">
           
           <!-- Service 01 -->
-          <div class="service-row py-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline group px-4 -mx-4 cursor-default">
+          <div class="service-row py-8 px-2 sm:px-4 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline group cursor-default">
             <div class="md:col-span-1 text-sm font-serif font-bold text-slate-400 group-hover:text-[#0284C7] transition-colors">01</div>
             <div class="md:col-span-4 flex items-center justify-between">
               <div>
@@ -507,7 +496,7 @@
           </div>
 
           <!-- Service 02 -->
-          <div class="service-row py-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline group px-4 -mx-4 cursor-default">
+          <div class="service-row py-8 px-2 sm:px-4 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline group cursor-default">
             <div class="md:col-span-1 text-sm font-serif font-bold text-slate-400 group-hover:text-[#0284C7] transition-colors">02</div>
             <div class="md:col-span-4 flex items-center justify-between">
               <div>
@@ -524,7 +513,7 @@
           </div>
 
           <!-- Service 03 -->
-          <div class="service-row py-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline group px-4 -mx-4 cursor-default">
+          <div class="service-row py-8 px-2 sm:px-4 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline group cursor-default">
             <div class="md:col-span-1 text-sm font-serif font-bold text-slate-400 group-hover:text-[#0284C7] transition-colors">03</div>
             <div class="md:col-span-4 flex items-center justify-between">
               <div>
@@ -541,7 +530,7 @@
           </div>
 
           <!-- Service 04 -->
-          <div class="service-row py-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline group px-4 -mx-4 cursor-default">
+          <div class="service-row py-8 px-2 sm:px-4 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline group cursor-default">
             <div class="md:col-span-1 text-sm font-serif font-bold text-slate-400 group-hover:text-[#0284C7] transition-colors">04</div>
             <div class="md:col-span-4 flex items-center justify-between">
               <div>
@@ -558,7 +547,7 @@
           </div>
 
           <!-- Service 05 -->
-          <div class="service-row py-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline group px-4 -mx-4 cursor-default">
+          <div class="service-row py-8 px-2 sm:px-4 grid grid-cols-1 md:grid-cols-12 gap-6 items-baseline group cursor-default">
             <div class="md:col-span-1 text-sm font-serif font-bold text-slate-400 group-hover:text-[#0284C7] transition-colors">05</div>
             <div class="md:col-span-4 flex items-center justify-between">
               <div>
@@ -582,114 +571,148 @@
     <div class="hairline-divider"></div>
 
     <!-- ========================================================================
-         6.5. SIGNATURE MOVE: 3D EXPLODED CAPABILITY ENGINE (Apple-Style Teardown)
+         6.5. SIGNATURE CAPABILITY ENGINE: 4-LAYER ARCHITECTURAL CONSOLE
          Interactive spatial deconstruction of KAEVI's workforce capability layers.
          ======================================================================== -->
-    <section id="capability-engine" class="exploded-engine-section relative">
-      <div class="exploded-sticky-stage">
-        <div class="site-container w-full py-12 lg:py-0">
+    <section id="capability-engine" class="corp-section bg-gradient-to-b from-[#FFFFFF] to-[#F8FAFC] border-t border-b border-[#E2E8F0] relative overflow-hidden">
+      <div class="site-container">
+        
+        <div class="max-w-3xl mb-12 sm:mb-16">
+          <span class="eyebrow-tag mb-2">KAEVI ARCHITECTURE // 04 PHYSICAL PLANES</span>
+          <h2 class="text-3xl sm:text-5xl font-serif text-[#0B192C] tracking-tight mb-4 leading-tight">
+            The GCC Capability Engine.<br>
+            <em class="italic text-[#0284C7]">Engineered layer by layer.</em>
+          </h2>
+          <p class="text-base sm:text-lg text-[#334155] leading-relaxed">
+            Deconstructing our workforce operating engine into its four architectural planes—from continuous ecosystem telemetry to executive governance.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
           
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          <!-- Left Column: 4 Interactive Layer Selector Cards -->
+          <div class="lg:col-span-5 flex flex-col justify-between gap-3.5" id="engine-layer-tabs">
             
-            <!-- Left Column: The 3D Exploded Layer Stack Assembly -->
-            <div class="lg:col-span-7">
-              <div class="space-y-3 mb-6">
-                <span class="eyebrow-tag">KAEVI ARCHITECTURE // 04 PHYSICAL PLANES</span>
-                <h3 class="text-2xl sm:text-4xl font-serif text-[#0B192C] tracking-tight">
-                  The GCC Capability Engine.<br>
-                  <em class="italic text-[#0284C7]">Engineered layer by layer.</em>
-                </h3>
-                <p class="text-xs sm:text-sm text-slate-600 max-w-xl">
-                  Scroll to deconstruct the workforce engine into its four architectural planes—from live ecosystem telemetry to executive governance.
-                </p>
+            <!-- Layer 04 Tab -->
+            <button type="button" class="engine-layer-card text-left p-5 rounded-xl border border-[#0284C7] bg-[#F0F9FF] shadow-sm transition-all duration-200 cursor-pointer group active" data-layer="4">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-xs font-mono font-bold text-[#0284C7] uppercase tracking-wider">LAYER 04 // GOVERNANCE SHIELD</span>
+                <span class="w-2.5 h-2.5 rounded-full bg-[#0284C7] ring-4 ring-[#0284C7]/20"></span>
               </div>
+              <h4 class="text-base font-bold text-[#0B192C] group-hover:text-[#0284C7] transition-colors">Named Single Accountability</h4>
+              <p class="text-xs text-slate-600 mt-1">Counteroffer Hedging • 24h SLA Enforcement • Offer Retention</p>
+            </button>
 
-              <!-- 3D Spatial Assembly Stage -->
-              <div class="engine-3d-viewport">
-                <div class="engine-stack-assembly" id="engine-assembly">
-                  
-                  <!-- Slice 4: Top - Executive Governance & Counteroffer Shield -->
-                  <div class="engine-layer-slice slice-4 p-5 flex flex-col justify-between" data-slice="4">
-                    <div class="flex items-center justify-between">
-                      <span class="text-xs font-mono font-bold text-[#0284C7] uppercase">LAYER 04 // GOVERNANCE SHIELD</span>
-                      <span class="w-2 h-2 rounded-full bg-[#0284C7]"></span>
-                    </div>
-                    <div class="space-y-1">
-                      <div class="text-sm font-bold text-[#0B192C]">Named Single Accountability</div>
-                      <div class="text-xs text-slate-500 font-mono">Counteroffer Hedging • 24h SLA Enforcement</div>
-                    </div>
-                  </div>
-
-                  <!-- Slice 3: Delivery Pod Execution Layer -->
-                  <div class="engine-layer-slice slice-3 p-5 flex flex-col justify-between" data-slice="3">
-                    <div class="flex items-center justify-between">
-                      <span class="text-xs font-mono font-bold text-[#0284C7] uppercase">LAYER 03 // DELIVERY PODS</span>
-                      <span class="w-2 h-2 rounded-full bg-[#0284C7]"></span>
-                    </div>
-                    <div class="space-y-1">
-                      <div class="text-sm font-bold text-[#0B192C]">Domain-Dedicated Sourcing Lanes</div>
-                      <div class="text-xs text-slate-500 font-mono">Parallel Sprints • Pre-Screened Candidate Benches</div>
-                    </div>
-                  </div>
-
-                  <!-- Slice 2: Calibration Charter Core -->
-                  <div class="engine-layer-slice slice-2 p-5 flex flex-col justify-between" data-slice="2">
-                    <div class="flex items-center justify-between">
-                      <span class="text-xs font-mono font-bold text-[#0284C7] uppercase">LAYER 02 // CALIBRATION CORE</span>
-                      <span class="w-2 h-2 rounded-full bg-[#0284C7]"></span>
-                    </div>
-                    <div class="space-y-1">
-                      <div class="text-sm font-bold text-[#0B192C]">Role Outcome Charter & Diagnostic</div>
-                      <div class="text-xs text-slate-500 font-mono">5-Point Vetting • Peer Market Banding</div>
-                    </div>
-                  </div>
-
-                  <!-- Slice 1: Base - Ecosystem Telemetry Engine -->
-                  <div class="engine-layer-slice slice-1 p-5 flex flex-col justify-between" data-slice="1">
-                    <div class="flex items-center justify-between">
-                      <span class="text-xs font-mono font-bold text-[#0284C7] uppercase">LAYER 01 // ECOSYSTEM RADAR</span>
-                      <span class="w-2 h-2 rounded-full bg-[#0284C7]"></span>
-                    </div>
-                    <div class="space-y-1">
-                      <div class="text-sm font-bold text-[#0B192C]">Live Market Telemetry</div>
-                      <div class="text-xs text-slate-500 font-mono">2,117 GCC Nodes • Talent Density Mapping</div>
-                    </div>
-                  </div>
-
-                </div>
+            <!-- Layer 03 Tab -->
+            <button type="button" class="engine-layer-card text-left p-5 rounded-xl border border-[#E2E8F0] bg-white hover:bg-slate-50 transition-all duration-200 cursor-pointer group" data-layer="3">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-xs font-mono font-bold text-slate-400 group-hover:text-[#0284C7] uppercase tracking-wider transition-colors">LAYER 03 // DELIVERY PODS</span>
+                <span class="w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-[#0284C7] transition-colors"></span>
               </div>
-            </div>
+              <h4 class="text-base font-bold text-[#0B192C] group-hover:text-[#0284C7] transition-colors">Domain-Dedicated Sourcing Lanes</h4>
+              <p class="text-xs text-slate-600 mt-1">Parallel Sprints • Pre-Screened Candidate Benches • Squad Velocity</p>
+            </button>
 
-            <!-- Right Column: Interactive Specification Callout Cards -->
-            <div class="lg:col-span-5 space-y-3.5">
-              <div class="engine-callout-card p-4 rounded-lg cursor-pointer active" data-target-slice="4">
-                <span class="text-xs font-serif font-bold text-[#0284C7]">04 // GOVERNANCE & RISK</span>
-                <h4 class="text-sm font-bold text-[#0B192C] mt-0.5">Named Single Accountability</h4>
-                <p class="text-xs text-slate-600 mt-1">Direct partner responsibility for offer-to-join retention, notice period tracking, and SLA guarantees.</p>
+            <!-- Layer 02 Tab -->
+            <button type="button" class="engine-layer-card text-left p-5 rounded-xl border border-[#E2E8F0] bg-white hover:bg-slate-50 transition-all duration-200 cursor-pointer group" data-layer="2">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-xs font-mono font-bold text-slate-400 group-hover:text-[#0284C7] uppercase tracking-wider transition-colors">LAYER 02 // CALIBRATION CORE</span>
+                <span class="w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-[#0284C7] transition-colors"></span>
               </div>
+              <h4 class="text-base font-bold text-[#0B192C] group-hover:text-[#0284C7] transition-colors">Role Outcome Charter & Diagnostic</h4>
+              <p class="text-xs text-slate-600 mt-1">5-Point Vetting • Peer Market Banding • Zero Resume Dumping</p>
+            </button>
 
-              <div class="engine-callout-card p-4 rounded-lg cursor-pointer" data-target-slice="3">
-                <span class="text-xs font-serif font-bold text-[#0284C7]">03 // CAPACITY & VELOCITY</span>
-                <h4 class="text-sm font-bold text-[#0B192C] mt-0.5">Embedded Sprint Pods</h4>
-                <p class="text-xs text-slate-600 mt-1">Specialized engineering lanes sourcing pre-calibrated squads across AI, distributed backend, and platform SRE.</p>
+            <!-- Layer 01 Tab -->
+            <button type="button" class="engine-layer-card text-left p-5 rounded-xl border border-[#E2E8F0] bg-white hover:bg-slate-50 transition-all duration-200 cursor-pointer group" data-layer="1">
+              <div class="flex items-center justify-between mb-1.5">
+                <span class="text-xs font-mono font-bold text-slate-400 group-hover:text-[#0284C7] uppercase tracking-wider transition-colors">LAYER 01 // ECOSYSTEM RADAR</span>
+                <span class="w-2.5 h-2.5 rounded-full bg-slate-300 group-hover:bg-[#0284C7] transition-colors"></span>
               </div>
-
-              <div class="engine-callout-card p-4 rounded-lg cursor-pointer" data-target-slice="2">
-                <span class="text-xs font-serif font-bold text-[#0284C7]">02 // ACCURACY BY DESIGN</span>
-                <h4 class="text-sm font-bold text-[#0B192C] mt-0.5">Outcome Calibration Charter</h4>
-                <p class="text-xs text-slate-600 mt-1">Zero resume dumping. Every candidate is evaluated on architectural fit, compensation benchmarks, and joining risk.</p>
-              </div>
-
-              <div class="engine-callout-card p-4 rounded-lg cursor-pointer" data-target-slice="1">
-                <span class="text-xs font-serif font-bold text-[#0284C7]">01 // DEEP TELEMETRY</span>
-                <h4 class="text-sm font-bold text-[#0B192C] mt-0.5">2,117-Center Ecosystem Map</h4>
-                <p class="text-xs text-slate-600 mt-1">Continuous intelligence across Bengaluru, Hyderabad, Pune, NCR, and Chennai mapping scarce practitioner depth.</p>
-              </div>
-            </div>
+              <h4 class="text-base font-bold text-[#0B192C] group-hover:text-[#0284C7] transition-colors">Live Market Telemetry</h4>
+              <p class="text-xs text-slate-600 mt-1">2,117 GCC Nodes • Talent Density Mapping • Cross-Border Reach</p>
+            </button>
 
           </div>
 
+          <!-- Right Column: Interactive Specification & Delivery Dossier -->
+          <div class="lg:col-span-7">
+            <div id="engine-dossier" class="bg-[#0B192C] text-white rounded-2xl p-6 sm:p-8 border border-slate-800 shadow-xl relative overflow-hidden flex flex-col justify-between h-full min-h-[420px]">
+              
+              <!-- Subtle decorative grid background -->
+              <div class="absolute inset-0 bg-[radial-gradient(#38BDF8_1px,transparent_1px)] [background-size:16px_16px] opacity-10 pointer-events-none" aria-hidden="true"></div>
+
+              <div class="relative z-10 space-y-6">
+                <!-- Dossier Header -->
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-5 border-b border-slate-800">
+                  <div>
+                    <span id="dossier-layer-tag" class="text-xs font-mono font-bold text-[#38BDF8] uppercase tracking-wider">LAYER 04 // GOVERNANCE & RISK SHIELD</span>
+                    <h3 id="dossier-title" class="text-xl sm:text-2xl font-serif text-white mt-1">Named Single Accountability</h3>
+                  </div>
+                  <span id="dossier-sla-badge" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/40 text-emerald-400 text-xs font-mono shrink-0">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    24h SLA Active
+                  </span>
+                </div>
+
+                <!-- Dossier Narrative -->
+                <p id="dossier-description" class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  Direct partner responsibility for offer-to-join retention, notice period tracking, and counteroffer hedging. We actively engage candidates through 60–90 day notice periods with structured technical touchpoints, ensuring zero unhedged drop-offs on critical mandates.
+                </p>
+
+                <!-- Telemetry Metrics Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                  <div class="p-3.5 bg-slate-900/80 rounded-lg border border-slate-800">
+                    <span id="dossier-metric-label-1" class="text-[11px] font-mono text-slate-400 uppercase block">Governance</span>
+                    <span id="dossier-metric-val-1" class="text-base sm:text-lg font-bold text-white mt-0.5 block">Named Partner</span>
+                    <span id="dossier-metric-sub-1" class="text-[10px] text-slate-500 block">Single point of contact</span>
+                  </div>
+                  <div class="p-3.5 bg-slate-900/80 rounded-lg border border-slate-800">
+                    <span id="dossier-metric-label-2" class="text-[11px] font-mono text-slate-400 uppercase block">SLA Cadence</span>
+                    <span id="dossier-metric-val-2" class="text-base sm:text-lg font-bold text-[#38BDF8] mt-0.5 block">24h Feedback</span>
+                    <span id="dossier-metric-sub-2" class="text-[10px] text-slate-500 block">Loop enforcement</span>
+                  </div>
+                  <div class="p-3.5 bg-slate-900/80 rounded-lg border border-slate-800">
+                    <span id="dossier-metric-label-3" class="text-[11px] font-mono text-slate-400 uppercase block">Retention</span>
+                    <span id="dossier-metric-val-3" class="text-base sm:text-lg font-bold text-emerald-400 mt-0.5 block">100% Tracked</span>
+                    <span id="dossier-metric-sub-3" class="text-[10px] text-slate-500 block">Offer to Day-1 join</span>
+                  </div>
+                </div>
+
+                <!-- Operational Deliverables -->
+                <div class="pt-4 border-t border-slate-800 space-y-2">
+                  <span class="text-xs font-mono uppercase tracking-wider text-slate-400 block font-bold">Standard Deliverables</span>
+                  <ul id="dossier-deliverables" class="space-y-1.5 text-xs text-slate-300">
+                    <li class="flex items-center gap-2">
+                      <span class="text-[#38BDF8]">✓</span>
+                      <span>Weekly structured pipeline scorecard with aging and bottleneck flags</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <span class="text-[#38BDF8]">✓</span>
+                      <span>Notice period vulnerability audit and proactive counteroffer shielding</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <span class="text-[#38BDF8]">✓</span>
+                      <span>Executive monthly governance review with talent density & compensation benchmarking</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Dossier Footer Control -->
+              <div class="relative z-10 pt-6 mt-6 border-t border-slate-800 flex items-center justify-between text-xs font-mono text-slate-400">
+                <span class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+                  <span>Architecture Console // Ready</span>
+                </span>
+                <span class="text-slate-500">Click any layer to inspect</span>
+              </div>
+
+            </div>
+          </div>
+
         </div>
+
       </div>
     </section>
 
