@@ -732,6 +732,101 @@ function initHybridMotionSystem() {
         if (curtain) curtain.classList.add('revealed');
       }, '-=0.85');
 
+    // Apple-Style Spatial Hero Dimensional Depth Scroll (Desktop)
+    if (window.innerWidth >= 1024) {
+      const heroSection = document.getElementById('hero');
+      if (heroSection) {
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: heroSection,
+            start: 'top top',
+            end: 'bottom bottom',
+            scrub: 1.2,
+            invalidateOnRefresh: true
+          }
+        })
+        .to('.hero-bg-img', { scale: 1.15, y: -40, ease: 'none' }, 0)
+        .to('.hero-plane-1-type', { y: -50, scale: 0.88, opacity: 0.35, ease: 'power1.out' }, 0)
+        .to('.hero-glass-plinth', { y: -25, scale: 1.03, boxShadow: '0 32px 70px -10px rgba(11,25,44,0.22)', ease: 'none' }, 0)
+        .to('.hero-foreground-content', { y: -80, opacity: 0.9, ease: 'none' }, 0);
+      }
+    }
+
+    // Signature Move: 3D Exploded Capability Engine (Apple Hardware Teardown)
+    const engineSection = document.getElementById('capability-engine');
+    if (engineSection) {
+      const slices = [
+        document.querySelector('.engine-layer-slice.slice-1'),
+        document.querySelector('.engine-layer-slice.slice-2'),
+        document.querySelector('.engine-layer-slice.slice-3'),
+        document.querySelector('.engine-layer-slice.slice-4')
+      ];
+      const calloutCards = Array.from(document.querySelectorAll('.engine-callout-card'));
+
+      function highlightEngineLayer(activeNum) {
+        slices.forEach(s => {
+          if (!s) return;
+          const num = parseInt(s.getAttribute('data-slice'), 10);
+          if (num === activeNum) {
+            s.classList.add('active');
+          } else {
+            s.classList.remove('active');
+          }
+        });
+
+        calloutCards.forEach(c => {
+          const num = parseInt(c.getAttribute('data-target-slice'), 10);
+          if (num === activeNum) {
+            c.classList.add('active');
+          } else {
+            c.classList.remove('active');
+          }
+        });
+      }
+
+      // Interactive Click on Callout Cards or Slices
+      calloutCards.forEach(card => {
+        card.addEventListener('click', () => {
+          const targetSlice = parseInt(card.getAttribute('data-target-slice'), 10);
+          highlightEngineLayer(targetSlice);
+        });
+      });
+
+      slices.forEach(slice => {
+        if (!slice) return;
+        slice.addEventListener('click', () => {
+          const num = parseInt(slice.getAttribute('data-slice'), 10);
+          highlightEngineLayer(num);
+        });
+      });
+
+      // Desktop Pinned 3D Exploded Scrubber
+      if (window.innerWidth >= 1024) {
+        const engineTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: engineSection,
+            start: 'top top',
+            end: 'bottom bottom',
+            scrub: 1,
+            onUpdate: (self) => {
+              const p = self.progress;
+              if (p > 0.75) highlightEngineLayer(4);
+              else if (p > 0.5) highlightEngineLayer(3);
+              else if (p > 0.25) highlightEngineLayer(2);
+              else highlightEngineLayer(1);
+            }
+          }
+        });
+
+        engineTl
+          .to('.engine-layer-slice.slice-4', { y: -135, z: 90, rotateX: 28, ease: 'power1.out' }, 0)
+          .to('.engine-layer-slice.slice-3', { y: -45, z: 35, ease: 'power1.out' }, 0)
+          .to('.engine-layer-slice.slice-2', { y: 45, z: -25, ease: 'power1.out' }, 0)
+          .to('.engine-layer-slice.slice-1', { y: 135, z: -85, rotateX: 20, ease: 'power1.out' }, 0)
+          .to('#engine-assembly', { rotateY: -14, ease: 'none' }, 0);
+      }
+    }
+
     // GCC Stats Smooth Count-Up (Accurate, exact static values, once: true)
     const statsContainer = document.getElementById('gcc-stats-container');
     if (statsContainer) {
