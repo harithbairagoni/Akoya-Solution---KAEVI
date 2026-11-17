@@ -733,6 +733,22 @@ function initHybridMotionSystem() {
         if (curtain) curtain.classList.add('revealed');
       }, '-=0.6');
 
+    // Hero Background Video Scroll-Driven Parallax
+    const heroBgVideo = document.getElementById('hero-background-video');
+    if (heroBgVideo && window.innerWidth >= 768) {
+      gsap.to(heroBgVideo, {
+        scrollTrigger: {
+          trigger: '#hero',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 1
+        },
+        y: 75,
+        scale: 1.05,
+        ease: 'none'
+      });
+    }
+
     // Interactive GCC Capability Architecture Console
     const engineSection = document.getElementById('capability-engine');
     if (engineSection) {
